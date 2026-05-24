@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Natasha Brown — Lead UX Researcher</title>
+<meta name="description" content="Natasha Brown is a Lead UX Researcher with 10+ years across consumer goods and retail. Most recently Sole IC Researcher at Lowe's. Available for Lead and Staff UXR roles.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  /* HOMEPAGE-SPECIFIC */
+  .hero {
+    min-height: 92vh;
+    padding-top: 140px;
+    padding-bottom: 80px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 32px;
+    align-items: start;
+  }
+  .hero .eyebrow { grid-column: 1 / 13; margin-bottom: 80px; }
+  .hero h1 {
+    grid-column: 1 / 11;
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: clamp(56px, 9vw, 132px);
+    line-height: 1.0;
+    letter-spacing: -0.025em;
+    margin-bottom: 48px;
+  }
+  .hero h1 .em { font-style: italic; color: var(--accent); }
+  .hero .lede {
+    grid-column: 1 / 8;
+    font-size: 20px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    letter-spacing: -0.01em;
+  }
+  .hero .lede p { margin-bottom: 14px; }
+  .hero .lede strong { color: var(--ink); font-weight: 600; }
+  .hero .availability {
+    grid-column: 1 / 13;
+    margin-top: 80px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 13px;
+    color: var(--muted);
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .hero .availability strong { color: var(--ink); font-weight: 500; }
+  .hero .availability .dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    margin-right: 8px;
+    vertical-align: middle;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  /* IMPACT STRIP */
+  .impact-strip {
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 64px 56px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 48px;
+    background: var(--bg);
+  }
+  .impact-strip .label-row {
+    grid-column: 1 / 5;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .impact-strip .stat {
+    border-left: 1px solid var(--rule);
+    padding-left: 24px;
+  }
+  .impact-strip .stat:first-of-type { border-left: none; padding-left: 0; }
+  .impact-strip .stat .num {
+    font-family: 'Instrument Serif', serif;
+    font-size: 56px;
+    line-height: 1;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+  }
+  .impact-strip .stat .num .unit { font-size: 24px; color: var(--muted); }
+  .impact-strip .stat .lbl {
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.4;
+  }
+  .impact-strip .stat .sub {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+
+  /* WORK PREVIEW LIST */
+  .work-list { display: flex; flex-direction: column; }
+  .case-link {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 32px;
+    padding: 44px 0;
+    border-top: 1px solid var(--rule);
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    transition: background 0.3s ease, padding 0.3s ease;
+  }
+  .case-link:hover {
+    background: var(--bg-soft);
+    margin: 0 -24px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .case-link:last-of-type { border-bottom: 1px solid var(--rule); }
+  .case-link .case-num {
+    grid-column: 1 / 2;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    padding-top: 16px;
+  }
+  .case-link .case-brand {
+    grid-column: 2 / 4;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    padding-top: 18px;
+    font-weight: 500;
+  }
+  .case-link .case-title {
+    grid-column: 4 / 10;
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: clamp(24px, 2.8vw, 36px);
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    transition: transform 0.4s ease;
+  }
+  .case-link:hover .case-title { transform: translateX(6px); }
+  .case-link .case-title em { font-style: italic; color: var(--accent); }
+  .case-link .case-meta {
+    grid-column: 10 / 13;
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.7;
+    padding-top: 14px;
+    text-align: right;
+  }
+  .case-link .case-meta .row { display: block; }
+  .case-link .case-meta .key { color: var(--ink-soft); font-weight: 500; margin-right: 4px; }
+  .case-link .case-arrow {
+    grid-column: 1 / 13;
+    text-align: right;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 16px;
+    transition: color 0.2s;
+  }
+  .case-link:hover .case-arrow { color: var(--accent); }
+  .case-link.placeholder::after {
+    content: 'IN PROGRESS';
+    position: absolute;
+    top: 20px;
+    right: 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    color: var(--muted);
+    border: 1px solid var(--rule-strong);
+    padding: 3px 8px;
+    letter-spacing: 0.12em;
+    border-radius: 2px;
+  }
+  .case-link:hover.placeholder::after { right: 24px; }
+
+  /* CTA AT BOTTOM */
+  .home-cta {
+    padding: 120px 56px;
+    text-align: center;
+    border-top: 1px solid var(--rule);
+  }
+  .home-cta h3 {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: clamp(40px, 6vw, 80px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 40px;
+  }
+  .home-cta h3 em { color: var(--accent); font-style: italic; }
+  .home-cta .cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 900px) {
+    .hero { padding-top: 100px; min-height: auto; }
+    .hero h1, .hero .lede, .hero .availability { grid-column: 1 / 13; }
+    .hero .availability { flex-direction: column; gap: 8px; align-items: flex-start; }
+    .impact-strip { grid-template-columns: 1fr 1fr; padding: 40px 24px; gap: 32px; }
+    .impact-strip .stat { border-left: none; padding-left: 0; }
+    .impact-strip .stat:nth-child(odd) { border-right: 1px solid var(--rule); padding-right: 16px; }
+    .case-link:hover { margin: 0; padding-left: 0; padding-right: 0; }
+    .case-link .case-num, .case-link .case-brand, .case-link .case-title, .case-link .case-meta {
+      grid-column: 1 / 13;
+      text-align: left;
+      padding-top: 0;
+    }
+    .case-link .case-num { margin-bottom: 4px; }
+    .case-link .case-brand { margin-bottom: 12px; }
+    .case-link .case-title { margin-bottom: 12px; }
+    .home-cta { padding: 60px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="index.html" class="logo">Natasha Brown<span class="em">.</span></a>
+  <ul>
+    <li><a href="index.html" class="active">Work</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="resume.html">Resume</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="eyebrow">Lead UX Researcher · Miami, FL · Consumer goods &amp; retail</div>
+
+  <h1>
+    <span>Research that</span><br>
+    <span><span class="em">earns its</span> place at the table.</span>
+  </h1>
+
+  <div class="lede">
+    <p>I'm <strong>Natasha Brown</strong>. For the past decade I've led research across <strong>Procter &amp; Gamble</strong> and <strong>Lowe's</strong> — defining research agendas independently, influencing roadmaps at the Director and VP level, and turning ambiguous customer problems into product strategy that ships.</p>
+    <p>My work has driven measurable revenue, reduced churn, and reshaped how cross-functional teams think about their customers.</p>
+  </div>
+
+  <div class="availability">
+    <span><span class="dot"></span><strong>Available</strong> for Lead &amp; Staff UXR roles</span>
+    <span>Updated May 2026</span>
+  </div>
+</section>
+
+<div class="impact-strip">
+  <div class="label-row">Measured impact, selected work</div>
+  <div class="stat">
+    <div class="num">+$14<span class="unit">M</span></div>
+    <div class="lbl">Revenue preserved via post-purchase redesign</div>
+    <div class="sub">Lowe's Digital Products, 2024–25</div>
+  </div>
+  <div class="stat">
+    <div class="num">+18<span class="unit">bps</span></div>
+    <div class="lbl">LTR lift in Blinds &amp; Shades shopping flow</div>
+    <div class="sub">Lowe's Home Décor, 2023</div>
+  </div>
+  <div class="stat">
+    <div class="num">-12<span class="unit">%</span></div>
+    <div class="lbl">Reduction in post-purchase support calls</div>
+    <div class="sub">Lowe's Digital Products, 2024–25</div>
+  </div>
+  <div class="stat">
+    <div class="num">$75<span class="unit">M+</span></div>
+    <div class="lbl">Combined product launches research-shaped</div>
+    <div class="sub">P&amp;G Grooming + Fabric Enhancers</div>
+  </div>
+</div>
+
+<section id="work">
+  <div class="section-head">
+    <div class="label">Selected Work</div>
+    <h2>Four case studies. Four <em>real outcomes</em>.</h2>
+    <div class="sub">Each one connects research method to business decision to measured impact.</div>
+  </div>
+
+  <div class="work-list">
+
+    <a class="case-link" href="work/post-purchase.html">
+      <div class="case-num">01</div>
+      <div class="case-brand">Lowe's · 2024–25</div>
+      <div class="case-title">Transforming the post-purchase experience to <em>reduce churn</em> and drive revenue growth</div>
+      <div class="case-meta">
+        <div class="row"><span class="key">Role</span>Sr. Product Researcher (Lead IC)</div>
+        <div class="row"><span class="key">Method</span>Mixed-methods, multi-phase</div>
+        <div class="row"><span class="key">Impact</span>+$14M revenue, -12% calls</div>
+      </div>
+      <div class="case-arrow">Read the case study →</div>
+    </a>
+
+    <a class="case-link" href="work/blinds-shades.html">
+      <div class="case-num">02</div>
+      <div class="case-brand">Lowe's · 2023</div>
+      <div class="case-title">Pioneering <em>category-specific</em> UXR — a deep dive into Home Décor selling</div>
+      <div class="case-meta">
+        <div class="row"><span class="key">Role</span>Sr. Product Researcher</div>
+        <div class="row"><span class="key">Timeline</span>2 months</div>
+        <div class="row"><span class="key">Impact</span>+4% ATC, +18bps LTR</div>
+      </div>
+      <div class="case-arrow">Read the case study →</div>
+    </a>
+
+    <a class="case-link placeholder" href="work/grooming.html">
+      <div class="case-num">03</div>
+      <div class="case-brand">P&amp;G Grooming · 2020–22</div>
+      <div class="case-title">Reframing consumer rituals to shape a <em>$50M</em> global product launch</div>
+      <div class="case-meta">
+        <div class="row"><span class="key">Role</span>Product Researcher</div>
+        <div class="row"><span class="key">Method</span>In-home ethnography + longitudinal</div>
+        <div class="row"><span class="key">Status</span>Writing up</div>
+      </div>
+      <div class="case-arrow">View placeholder →</div>
+    </a>
+
+    <a class="case-link placeholder" href="work/fabric-care.html">
+      <div class="case-num">04</div>
+      <div class="case-brand">P&amp;G Fabric Enhancers · 2016–20</div>
+      <div class="case-title">Olfactory ritual over functional performance — research that launched a <em>$25M sub-brand</em></div>
+      <div class="case-meta">
+        <div class="row"><span class="key">Role</span>Product Researcher</div>
+        <div class="row"><span class="key">Method</span>12-week longitudinal in-home</div>
+        <div class="row"><span class="key">Status</span>Writing up</div>
+      </div>
+      <div class="case-arrow">View placeholder →</div>
+    </a>
+
+  </div>
+</section>
+
+<div class="home-cta">
+  <h3>Let's <em>talk</em>.</h3>
+  <div class="cta-buttons">
+    <a href="contact.html" class="btn">Get in touch <span class="arrow">→</span></a>
+    <a href="resume.html" class="btn btn-ghost">View resume <span class="arrow">→</span></a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <span>© Natasha Brown · 2026</span>
+  <ul class="footer-nav">
+    <li><a href="index.html">Work</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="resume.html">Resume</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <span>researchbynatasha.com</span>
+</footer>
+
+</body>
+</html>

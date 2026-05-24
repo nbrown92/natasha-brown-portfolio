@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>P&amp;G Grooming — Natasha Brown</title>
+<meta name="description" content="Case study (in development): In-home ethnographic research at P&G Grooming that reframed a $50M global product launch.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/styles.css">
+<style>
+  .case-hero { padding: 140px 56px 60px; border-bottom: 1px solid var(--rule); }
+  .case-hero .breadcrumb { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--muted); margin-bottom: 48px; letter-spacing: 0.02em; }
+  .case-hero .breadcrumb a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .case-hero .breadcrumb a:hover { color: var(--accent); }
+  .case-hero .breadcrumb .sep { margin: 0 8px; color: var(--muted-soft); }
+  .case-hero .meta-top { display: grid; grid-template-columns: repeat(12, 1fr); gap: 32px; margin-bottom: 32px; }
+  .case-hero .meta-top .brand { grid-column: 1 / 7; font-family: 'JetBrains Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent); font-weight: 500; }
+  .case-hero .meta-top .status { grid-column: 9 / 13; text-align: right; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; border: 1px solid var(--rule-strong); padding: 4px 10px; border-radius: 2px; justify-self: end; }
+  .case-hero h1 { font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(40px, 6.5vw, 92px); line-height: 1.0; letter-spacing: -0.025em; margin-bottom: 56px; max-width: 14ch; }
+  .case-hero h1 .em { font-style: italic; color: var(--accent); }
+  .case-hero .summary { display: grid; grid-template-columns: repeat(12, 1fr); gap: 32px; padding-top: 32px; border-top: 1px solid var(--rule); }
+  .case-hero .summary .lede { grid-column: 1 / 8; font-size: 19px; line-height: 1.55; color: var(--ink-soft); }
+  .case-hero .summary .lede strong { color: var(--ink); font-weight: 600; }
+  .case-hero .summary .facts { grid-column: 9 / 13; font-size: 13px; line-height: 1.7; }
+  .case-hero .summary .facts .row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--rule); }
+  .case-hero .summary .facts .row:first-child { border-top: 1px solid var(--rule); }
+  .case-hero .summary .facts .key { font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
+  .case-hero .summary .facts .val { color: var(--ink); font-weight: 500; text-align: right; }
+
+  .coming-soon { padding: 120px 56px; }
+  .coming-soon .inner { display: grid; grid-template-columns: repeat(12, 1fr); gap: 32px; }
+  .coming-soon .label { grid-column: 1 / 4; font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--accent); padding-top: 8px; font-weight: 500; }
+  .coming-soon .content { grid-column: 4 / 11; }
+  .coming-soon .content h3 { font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(28px, 3.4vw, 44px); line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 28px; }
+  .coming-soon .content h3 em { color: var(--accent); font-style: italic; }
+  .coming-soon .content p { font-size: 17px; line-height: 1.65; color: var(--ink-soft); margin-bottom: 18px; }
+  .coming-soon .content p strong { color: var(--ink); font-weight: 600; }
+
+  .preview-grid { padding: 0 56px 80px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .preview-card { background: var(--bg-soft); padding: 32px; border-top: 2px solid var(--accent); }
+  .preview-card .num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); letter-spacing: 0.1em; margin-bottom: 8px; }
+  .preview-card h4 { font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 22px; line-height: 1.2; margin-bottom: 12px; color: var(--ink); }
+  .preview-card p { font-size: 14px; line-height: 1.55; color: var(--ink-soft); }
+
+  .cta-section { padding: 80px 56px 120px; text-align: center; }
+  .cta-section h3 { font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(28px, 4vw, 44px); line-height: 1.2; margin-bottom: 16px; }
+  .cta-section h3 em { color: var(--accent); font-style: italic; }
+  .cta-section p { font-size: 16px; color: var(--muted); margin-bottom: 32px; max-width: 540px; margin-left: auto; margin-right: auto; }
+  .cta-section .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+  .next-case { padding: 80px 56px; border-top: 1px solid var(--rule); background: var(--bg); }
+  .next-case .inner { display: grid; grid-template-columns: repeat(12, 1fr); gap: 32px; align-items: center; }
+  .next-case .label { grid-column: 1 / 4; font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--muted); }
+  .next-case .title { grid-column: 4 / 11; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(28px, 4vw, 48px); line-height: 1.1; letter-spacing: -0.02em; color: var(--ink); text-decoration: none; transition: color 0.2s; }
+  .next-case .title:hover { color: var(--accent); }
+  .next-case .title em { font-style: italic; color: var(--accent); }
+  .next-case .arrow { grid-column: 12 / 13; text-align: right; font-family: 'JetBrains Mono', monospace; font-size: 24px; color: var(--accent); }
+
+  @media (max-width: 900px) {
+    .case-hero { padding: 100px 24px 40px; }
+    .case-hero .meta-top .brand, .case-hero .meta-top .status { grid-column: 1 / 13; text-align: left; justify-self: start; margin-bottom: 8px; }
+    .case-hero .summary .lede, .case-hero .summary .facts { grid-column: 1 / 13; }
+    .case-hero .summary .facts { margin-top: 24px; }
+    .coming-soon { padding: 60px 24px; }
+    .coming-soon .label, .coming-soon .content { grid-column: 1 / 13; }
+    .preview-grid { padding: 0 24px 60px; grid-template-columns: 1fr; }
+    .cta-section { padding: 60px 24px; }
+    .next-case { padding: 60px 24px; }
+    .next-case .label, .next-case .title, .next-case .arrow { grid-column: 1 / 13; text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="../index.html" class="logo">Natasha Brown<span class="em">.</span></a>
+  <ul>
+    <li><a href="../index.html" class="active">Work</a></li>
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../resume.html">Resume</a></li>
+    <li><a href="../contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="case-hero">
+  <div class="breadcrumb">
+    <a href="../index.html">Work</a><span class="sep">/</span>P&amp;G Grooming
+  </div>
+  <div class="meta-top">
+    <div class="brand">Procter &amp; Gamble · Grooming · Product Researcher</div>
+    <div class="status">In Development</div>
+  </div>
+  <h1>Reframing consumer rituals to shape a <span class="em">$50M global product launch</span>.</h1>
+  <div class="summary">
+    <div class="lede">
+      In-home ethnographic research that uncovered a gap between brand assumptions and actual consumer behavior — leading to a fundamental reframe of product positioning before launch. The work translated <strong>longitudinal usage data and qual synthesis into go-to-market recommendations</strong> that aligned with how consumers actually used the product.
+    </div>
+    <div class="facts">
+      <div class="row"><span class="key">Years</span><span class="val">2020 — 2022</span></div>
+      <div class="row"><span class="key">Location</span><span class="val">Boston, MA</span></div>
+      <div class="row"><span class="key">Methods</span><span class="val">Ethnography · Longitudinal · Concept</span></div>
+      <div class="row"><span class="key">Scope</span><span class="val">4 global programs · 4 countries</span></div>
+      <div class="row"><span class="key">Budget</span><span class="val">$100K+ research</span></div>
+      <div class="row"><span class="key">Impact</span><span class="val">$50M launch · +8% sales</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="coming-soon">
+  <div class="inner">
+    <div class="label">Case Study</div>
+    <div class="content">
+      <h3>This case is currently being <em>written up</em>.</h3>
+      <p>I'm working through the appropriate steps to share this case study publicly with respect to <strong>P&amp;G's confidentiality requirements</strong>. The work covers a multi-year program of consumer research at the Grooming division — including the in-home ethnographic study that reframed positioning for a $50M global product launch.</p>
+      <p>I'm happy to walk through this work in detail during interview conversations, including:</p>
+    </div>
+  </div>
+</section>
+
+<div class="preview-grid">
+  <div class="preview-card">
+    <div class="num">— 01</div>
+    <h4>The ritual finding</h4>
+    <p>How in-home ethnography revealed that consumers had developed grooming rituals substantially at odds with the brand's existing usage assumptions — and how that reframed the entire positioning strategy.</p>
+  </div>
+  <div class="preview-card">
+    <div class="num">— 02</div>
+    <h4>From insight to GTM</h4>
+    <p>The translation from qualitative consumer behavior into <strong>go-to-market recommendations</strong> and claims development that aligned commercial goals with behavioral evidence — contributing to an 8% sales increase in the launch period.</p>
+  </div>
+  <div class="preview-card">
+    <div class="num">— 03</div>
+    <h4>Multi-phase roadmap</h4>
+    <p>How I built and maintained a research roadmap spanning concept screening through post-launch evaluation, with a $100K+ budget across vendors and international stakeholder teams in four countries.</p>
+  </div>
+</div>
+
+<div class="cta-section">
+  <h3>Want to discuss this <em>work</em>?</h3>
+  <p>I can walk through this case study and the underlying methodology in interview conversations, with appropriate respect to confidentiality.</p>
+  <div class="cta-buttons">
+    <a href="../contact.html" class="btn">Get in touch <span class="arrow">→</span></a>
+    <a href="post-purchase.html" class="btn btn-ghost">See published work <span class="arrow">→</span></a>
+  </div>
+</div>
+
+<div class="next-case">
+  <div class="inner">
+    <div class="label">— Next Case Study</div>
+    <a href="fabric-care.html" class="title">Olfactory ritual → a <em>$25M sub-brand launch</em></a>
+    <div class="arrow">→</div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <span>© Natasha Brown · 2026</span>
+  <ul class="footer-nav">
+    <li><a href="../index.html">Work</a></li>
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../resume.html">Resume</a></li>
+    <li><a href="../contact.html">Contact</a></li>
+  </ul>
+  <span>researchbynatasha.com</span>
+</footer>
+
+</body>
+</html>

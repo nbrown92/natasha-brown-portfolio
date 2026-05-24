@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lowe's Blinds &amp; Shades — Natasha Brown</title>
+<meta name="description" content="Case study: Pioneering category-specific UXR at Lowe's. Driving +4% ATC and +18bps LTR in the Home Décor shopping flow.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/styles.css">
+<style>
+  /* Reuse case-study styles from post-purchase.html */
+  .case-hero { padding: 140px 56px 60px; border-bottom: 1px solid var(--rule); }
+  .case-hero .breadcrumb { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--muted); margin-bottom: 48px; letter-spacing: 0.02em; }
+  .case-hero .breadcrumb a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .case-hero .breadcrumb a:hover { color: var(--accent); }
+  .case-hero .breadcrumb .sep { margin: 0 8px; color: var(--muted-soft); }
+  .case-hero .meta-top { display: grid; grid-template-columns: repeat(12, 1fr); gap: 32px; margin-bottom: 32px; }
+  .case-hero .meta-top .brand { grid-column: 1 / 6; font-family: 'JetBrains Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent); font-weight: 500; }
+  .case-hero .meta-top .year { grid-column: 10 / 13; text-align: right; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--muted); letter-spacing: 0.02em; }
+  .case-hero h1 { font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(40px, 6.5vw, 92px); line-height: 1.0; letter-spacing: -0.025em; margin-bottom: 56px; max-width: 14ch; }
+  .case-hero h1 .em { font-style: italic; color: var(--accent); }
+  .case-hero .summary { display: grid; grid-template-columns: repeat(12, 1fr); gap: 32px; padding-top: 32px; border-top: 1px solid var(--rule); }
+  .case-hero .summary .lede { grid-column: 1 / 8; font-size: 19px; line-height: 1.55; color: var(--ink-soft); }
+  .case-hero .summary .lede strong { color: var(--ink); font-weight: 600; }
+  .case-hero .summary .facts { grid-column: 9 / 13; font-size: 13px; line-height: 1.7; }
+  .case-hero .summary .facts .row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--rule); }
+  .case-hero .summary .facts .row:first-child { border-top: 1px solid var(--rule); }
+  .case-hero .summary .facts .key { font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
+  .case-hero .summary .facts .val { color: var(--ink); font-weight: 500; text-align: right; }
+
+  .case-body { padding: 80px 56px; }
+  .case-section { display: grid; grid-template-columns: repeat(12, 1fr); gap: 32px; margin-bottom: 80px; }
+  .case-section .label { grid-column: 1 / 4; font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--accent); padding-top: 8px; font-weight: 500; }
+  .case-section .content { grid-column: 4 / 12; }
+  .case-section .content h3 { font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(28px, 3.4vw, 44px); line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 28px; color: var(--ink); }
+  .case-section .content h3 em { color: var(--accent); font-style: italic; }
+  .case-section .content p { font-size: 17px; line-height: 1.65; color: var(--ink-soft); margin-bottom: 18px; }
+  .case-section .content p strong { color: var(--ink); font-weight: 600; }
+  .case-section .content ul { list-style: none; margin: 16px 0; }
+  .case-section .content ul li { font-size: 16px; line-height: 1.65; color: var(--ink-soft); padding: 6px 0 6px 24px; position: relative; }
+  .case-section .content ul li::before { content: '—'; position: absolute; left: 0; color: var(--accent); }
+
+  .challenge-block { padding: 64px 56px; background: var(--bg-soft); border-top: 1px solid var(--rule-strong); border-bottom: 1px solid var(--rule-strong); margin: 0 0 80px; }
+  .challenge-block .inner { display: grid; grid-template-columns: repeat(12, 1fr); gap: 32px; }
+  .challenge-block .label { grid-column: 1 / 4; font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--accent); padding-top: 12px; font-weight: 500; }
+  .challenge-block .statement { grid-column: 4 / 12; font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; font-size: clamp(26px, 3.6vw, 42px); line-height: 1.2; letter-spacing: -0.015em; color: var(--ink); }
+
+  .process-phases { grid-column: 4 / 13; display: grid; gap: 20px; margin-top: 20px; }
+  .process-phases.phases-3 { grid-template-columns: repeat(3, 1fr); }
+  .process-phases .phase { background: var(--bg-soft); padding: 24px; border-top: 2px solid var(--accent); }
+  .process-phases .phase .pnum { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
+  .process-phases .phase h5 { font-family: 'Instrument Serif', serif; font-size: 22px; font-weight: 400; margin: 4px 0 14px; letter-spacing: -0.01em; color: var(--ink); }
+  .process-phases .phase ul { list-style: none; font-size: 13px; line-height: 1.55; color: var(--ink-soft); }
+  .process-phases .phase li { padding: 4px 0 4px 14px; position: relative; }
+  .process-phases .phase li::before { content: '·'; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
+
+  .artifact-gallery { padding: 0 56px 80px; }
+  .artifact-gallery .gallery-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--accent); margin-bottom: 24px; font-weight: 500; }
+  .artifact-gallery.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  .artifact-gallery.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+
+  .pull-quote { padding: 40px 56px 80px; }
+  .pull-quote .inner { display: grid; grid-template-columns: repeat(12, 1fr); gap: 32px; }
+  .pull-quote blockquote { grid-column: 3 / 11; font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; font-size: clamp(26px, 3.6vw, 40px); line-height: 1.3; letter-spacing: -0.015em; color: var(--ink); padding-left: 32px; border-left: 2px solid var(--accent); }
+  .pull-quote blockquote cite { display: block; font-family: 'JetBrains Mono', monospace; font-style: normal; font-size: 12px; letter-spacing: 0.05em; color: var(--muted); margin-top: 24px; text-transform: uppercase; }
+
+  .impact-grid { padding: 64px 56px; background: var(--accent); color: var(--bg); margin: 80px 0; }
+  .impact-grid .inner { display: grid; grid-template-columns: repeat(12, 1fr); gap: 32px; }
+  .impact-grid .label { grid-column: 1 / 13; font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--accent-light); margin-bottom: 32px; font-weight: 500; }
+  .impact-grid .stats { grid-column: 1 / 13; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid rgba(255, 255, 255, 0.18); border-bottom: 1px solid rgba(255, 255, 255, 0.18); }
+  .impact-grid .stat { padding: 28px 24px; border-right: 1px solid rgba(255, 255, 255, 0.12); }
+  .impact-grid .stat:last-child { border-right: none; }
+  .impact-grid .stat .num { font-family: 'Instrument Serif', serif; font-size: 56px; line-height: 1; font-weight: 400; letter-spacing: -0.025em; color: var(--bg); }
+  .impact-grid .stat .num .unit { font-size: 20px; opacity: 0.7; }
+  .impact-grid .stat .num em { font-style: italic; color: #b8d4e8; }
+  .impact-grid .stat .lbl { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; margin-top: 14px; line-height: 1.5; opacity: 0.75; }
+
+  .next-case { padding: 80px 56px; border-top: 1px solid var(--rule); background: var(--bg); }
+  .next-case .inner { display: grid; grid-template-columns: repeat(12, 1fr); gap: 32px; align-items: center; }
+  .next-case .label { grid-column: 1 / 4; font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--muted); }
+  .next-case .title { grid-column: 4 / 11; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(28px, 4vw, 48px); line-height: 1.1; letter-spacing: -0.02em; color: var(--ink); text-decoration: none; transition: color 0.2s; }
+  .next-case .title:hover { color: var(--accent); }
+  .next-case .title em { font-style: italic; color: var(--accent); }
+  .next-case .arrow { grid-column: 12 / 13; text-align: right; font-family: 'JetBrains Mono', monospace; font-size: 24px; color: var(--accent); }
+
+  @media (max-width: 900px) {
+    .case-hero { padding: 100px 24px 40px; }
+    .case-hero .meta-top .brand, .case-hero .meta-top .year { grid-column: 1 / 13; text-align: left; }
+    .case-hero .summary .lede, .case-hero .summary .facts { grid-column: 1 / 13; }
+    .case-hero .summary .facts { margin-top: 24px; }
+    .case-body { padding: 60px 24px; }
+    .case-section .label, .case-section .content, .process-phases { grid-column: 1 / 13; }
+    .process-phases.phases-3 { grid-template-columns: 1fr; }
+    .challenge-block { padding: 40px 24px; margin-bottom: 60px; }
+    .challenge-block .label, .challenge-block .statement { grid-column: 1 / 13; }
+    .artifact-gallery { padding: 0 24px 60px; }
+    .artifact-gallery.grid-2, .artifact-gallery.grid-3 { grid-template-columns: 1fr; gap: 20px; }
+    .pull-quote { padding: 20px 24px 60px; }
+    .pull-quote blockquote { grid-column: 1 / 13; }
+    .impact-grid { padding: 40px 24px; margin: 60px 0; }
+    .impact-grid .stats { grid-template-columns: 1fr 1fr; }
+    .impact-grid .stat:nth-child(2) { border-right: none; }
+    .impact-grid .stat:nth-child(1), .impact-grid .stat:nth-child(2) { border-bottom: 1px solid rgba(255, 255, 255, 0.12); }
+    .next-case { padding: 60px 24px; }
+    .next-case .label, .next-case .title, .next-case .arrow { grid-column: 1 / 13; text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="../index.html" class="logo">Natasha Brown<span class="em">.</span></a>
+  <ul>
+    <li><a href="../index.html" class="active">Work</a></li>
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../resume.html">Resume</a></li>
+    <li><a href="../contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="case-hero">
+  <div class="breadcrumb">
+    <a href="../index.html">Work</a><span class="sep">/</span>Blinds &amp; Shades / Home Décor
+  </div>
+  <div class="meta-top">
+    <div class="brand">Lowe's · Sr. Product Researcher (Lead IC)</div>
+    <div class="year">2023</div>
+  </div>
+  <h1>Pioneering <span class="em">category-specific</span> UXR — a deep dive into Home Décor selling.</h1>
+  <div class="summary">
+    <div class="lede">
+      I led foundational research that kicked off a new strategic workstream in appliance and home décor — categories critical to Lowe's seasonal revenue. The goal: improve the buying journey from the customer's lens, using agile, iterative research to identify key breakdowns and inform product strategy. <strong>Insights from this work laid the groundwork for cross-team prioritization and influenced broader CX investments across the business.</strong>
+    </div>
+    <div class="facts">
+      <div class="row"><span class="key">Timeline</span><span class="val">2 months</span></div>
+      <div class="row"><span class="key">Phase</span><span class="val">Explore · Test</span></div>
+      <div class="row"><span class="key">Team</span><span class="val">Sr. Designer, CS, Sr. PM</span></div>
+      <div class="row"><span class="key">Stakeholders</span><span class="val">Category Leads, Merchants</span></div>
+      <div class="row"><span class="key">Impact</span><span class="val">+4% ATC · +18bps LTR</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="challenge-block">
+  <div class="inner">
+    <div class="label">The Challenge</div>
+    <div class="statement">Define a research strategy to support Lowe's ambition to lead in Blinds &amp; Shades — uncovering customer barriers to confidence, conversion, and a seamless omni-channel experience.</div>
+  </div>
+</div>
+
+<section class="case-body">
+
+  <div class="case-section">
+    <div class="label">Context</div>
+    <div class="content">
+      <h3>Why a <em>category-specific</em> research model</h3>
+      <p>Appliance and home décor are critical to Lowe's seasonal revenue, but research had historically been treated as a horizontal function — applied evenly across product surfaces regardless of category nuance. I championed a different approach: foundational research designed to surface the breakdowns that only show up when you look at one category deeply.</p>
+      <p>The work needed to do two things: <strong>shape the Q3 roadmap for Blinds &amp; Shades</strong>, and <strong>prove out a research model</strong> that could be scaled by other teams.</p>
+    </div>
+  </div>
+
+  <div class="case-section">
+    <div class="label">Research Goals</div>
+    <div class="content">
+      <ul>
+        <li>Align cross-functional priorities and reduce churn risk by understanding how customers shop for blinds &amp; shades</li>
+        <li>Identify usability and decision-making gaps in the online journey to optimize conversion</li>
+        <li>Build a research model the org could scale to other categories</li>
+      </ul>
+    </div>
+  </div>
+
+</section>
+
+<div class="artifact-gallery" style="display: block;">
+  <div class="gallery-label">— Research Plan &amp; Discovery Process</div>
+  <div class="artifact aspect-21-9">
+    <div class="placeholder-inner">
+      <div class="icon"></div>
+      <div class="ph-label">Process Diagram</div>
+      <div class="ph-desc">Three-phase research: Discovery → Explore → Test. Feb '23 – Apr '23. Designed to balance rigor with speed.</div>
+      <div class="ph-meta">
+        <span>Artifact 01</span>
+        <span>Replace with: blinds_process.png</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="case-body" style="padding-top: 0;">
+
+  <div class="case-section">
+    <div class="label">Approach</div>
+    <div class="content">
+      <h3>A three-phase mixed-methods plan</h3>
+      <p>I crafted a strategic plan that balanced business goals with customer needs — synthesizing existing internal research to avoid duplication, then designing a mixed-methods program to fill the strategic gaps.</p>
+    </div>
+    <div class="process-phases phases-3">
+      <div class="phase">
+        <div class="pnum">01 / Discovery</div>
+        <h5>Discovery</h5>
+        <ul>
+          <li>Aligned stakeholders on goals &amp; business outcomes</li>
+          <li>Synthesized existing internal &amp; external knowledge</li>
+          <li>Designed mixed-methods plan</li>
+          <li>7 in-depth interviews + survey (n=120)</li>
+        </ul>
+      </div>
+      <div class="phase">
+        <div class="pnum">02 / Explore</div>
+        <h5>Explore</h5>
+        <ul>
+          <li>Friction-focused journey maps</li>
+          <li>Prioritization workshops with design, product, business</li>
+          <li>Drove alignment on highest-impact problems</li>
+          <li>Baymard benchmarking</li>
+        </ul>
+      </div>
+      <div class="phase">
+        <div class="pnum">03 / Test</div>
+        <h5>Test</h5>
+        <ul>
+          <li>Translated workshop output to design requirements</li>
+          <li>Iterative usability testing on 3 key features</li>
+          <li>Validated customer confidence in shopping journey</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<div class="artifact-gallery" style="display: block;">
+  <div class="gallery-label">— Strategic Research Plan &amp; Industry Benchmarking</div>
+  <div class="artifact-img-wrap">
+    <span class="img-label">Discovery Output</span>
+    <img src="images/blinds_research_plan.png" alt="Strategic research plan showing business need, methodology, and selected high-impact research questions for the blinds & shades workstream, alongside Baymard Institute benchmarking of product list page best practices." class="artifact-img" loading="lazy" />
+  </div>
+  <div class="artifact-caption" style="margin-top: 16px;"><strong>Discovery output:</strong> Strategic research plan paired with Baymard Institute benchmarking — grounding the work in both business priorities and cross-industry evidence. Quantitative (n=120 survey) and qualitative (7 moderated usability sessions) methods were chosen to balance scale with depth.</div>
+</div>
+
+<section class="case-body" style="padding-top: 0;">
+
+  <div class="case-section">
+    <div class="label">Synthesis</div>
+    <div class="content">
+      <h3>Translating data into visual artifacts the team could <em>act on</em></h3>
+      <p>I built two artifacts that drove the conversation forward in stakeholder readouts:</p>
+      <p><strong>A Customer Snapshot</strong> visualizing attitudes, motivations, and barriers across the purchase journey — translating survey data into a single page leadership could absorb in 60 seconds.</p>
+      <p><strong>A multi-source Customer Journey Map</strong> co-created with design, integrating qualitative, quantitative, and behavioral data to identify friction points and align teams on where to focus improvements.</p>
+    </div>
+  </div>
+
+</section>
+
+<div class="artifact-gallery" style="display: block;">
+  <div class="gallery-label">— Synthesis: Customer Snapshot &amp; Journey Map</div>
+  <div class="artifact-img-wrap">
+    <span class="img-label">Synthesis Output</span>
+    <img src="images/blinds_snapshot_journey.png" alt="Customer Snapshot showing survey statistics (n=119) on shopping behavior, knowledge gaps, and purchase decision factors, alongside a multi-source Customer Journey Map for the Blinds & Shades Custom flow." class="artifact-img" loading="lazy" />
+  </div>
+  <div class="artifact-caption" style="margin-top: 16px;"><strong>Synthesis output:</strong> The Customer Snapshot translated survey data (n=119) into a single page leadership could absorb in 60 seconds. The Journey Map, co-created with design, integrated qualitative, quantitative, and behavioral data — surfacing friction in Exploration and Finalizing Purchase as the highest-impact opportunities.</div>
+</div>
+
+<section class="case-body" style="padding-top: 0;">
+
+  <div class="case-section">
+    <div class="label">Key Insights</div>
+    <div class="content">
+      <h3>Three insights that reshaped the roadmap</h3>
+      <p><strong>Product Education Gap.</strong> Customers felt boxed into choosing blinds without understanding key differences between types — contributing to uncertainty and drop-off.</p>
+      <p><strong>Customization Visibility Barrier.</strong> Lack of clear dimension options deterred shoppers interested in custom blinds, limiting purchase confidence.</p>
+      <p><strong>Overwhelming Configuration Experience.</strong> The configurator was perceived as confusing and time-consuming, creating friction in the final stages of purchase.</p>
+    </div>
+  </div>
+
+</section>
+
+<div class="pull-quote">
+  <div class="inner">
+    <blockquote>
+      "I would expect to see more options. I can choose from something I can get when shopping in-store now, and that's expensive."
+      <cite>— Survey respondent, customization barrier</cite>
+    </blockquote>
+  </div>
+</div>
+
+<div class="artifact-gallery" style="display: block;">
+  <div class="gallery-label">— Cross-Functional Prioritization Workshop</div>
+  <div class="artifact-img-wrap">
+    <span class="img-label">Workshop Output</span>
+    <img src="images/blinds_workshop.png" alt="Design Vision Workshop overview showing the full cross-functional board structure (top) and detailed breakout teams for PLP, Configurator, and Visualizer with How Might We statements and example flows (bottom)." class="artifact-img" loading="lazy" />
+  </div>
+  <div class="artifact-caption" style="margin-top: 16px;"><strong>Workshop output:</strong> Used cross-team breakout boards to frame customer pain points into actionable opportunities. The Design Vision Workshop aligned UX, Product, and Merchandising on the two high-impact experience gaps that directly shaped the product roadmap — with examples pulled from real user flows for context.</div>
+</div>
+
+<section class="case-body" style="padding-top: 0;">
+
+  <div class="case-section">
+    <div class="label">What Shipped</div>
+    <div class="content">
+      <h3>How my research shaped the <em>final customer experience</em></h3>
+      <p><strong>Unified Product List Page.</strong> Custom and stock products on a single page, letting users explore the full range without committing to a product type upfront. Three tailored CTAs and supporting context made the differences clear, setting expectations before the PDP.</p>
+      <p><strong>Reordered Configurator.</strong> "Mount Type" expanded first to anchor expectations and reduce confusion with unfamiliar terms. Condensed layout minimized scrolling while keeping selections reviewable. Usability testing surfaced a minor interaction refinement around row-expand behavior.</p>
+      <p><strong>Strategic precedent.</strong> The category-specific research model I championed was <strong>later scaled by other research and design teams</strong>, elevating UX as a strategic priority across Product and Merchandising functions.</p>
+    </div>
+  </div>
+
+</section>
+
+<div class="artifact-gallery" style="display: block;">
+  <div class="gallery-label">— Shipped: The Final Customer Experience</div>
+  <div class="artifact-img-wrap">
+    <span class="img-label">Shipped Work</span>
+    <img src="images/blinds_shipped_experience.png" alt="Shipped redesigns: All Products list page on desktop showing custom and stock products with three tailored CTAs, alongside the Improved Configurator on mobile with Mount Type expanded first and condensed layout." class="artifact-img" loading="lazy" />
+  </div>
+  <div class="artifact-caption" style="margin-top: 16px;"><strong>Shipped:</strong> Two redesigns that directly traced back to research insight. The Unified List Page supported users uncertain about their needs early in the journey. The Improved Configurator reduced confusion with unfamiliar terms by expanding "Mount Type" first — and usability testing surfaced a minor row-expand refinement that improved final clarity.</div>
+</div>
+
+<div class="impact-grid">
+  <div class="inner">
+    <div class="label">— Measured Impact</div>
+    <div class="stats">
+      <div class="stat">
+        <div class="num"><em>+4%</em></div>
+        <div class="lbl">Add-to-Cart lift<br>List, PDP, configurator</div>
+      </div>
+      <div class="stat">
+        <div class="num">+18<span class="unit">bps</span></div>
+        <div class="lbl">LTR increase<br>Customer satisfaction</div>
+      </div>
+      <div class="stat">
+        <div class="num">n=120</div>
+        <div class="lbl">Survey + 7 IDIs<br>Mixed-methods rigor</div>
+      </div>
+      <div class="stat">
+        <div class="num"><em>1 → many</em></div>
+        <div class="lbl">Research model<br>scaled across teams</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="case-body" style="padding-top: 0;">
+
+  <div class="case-section">
+    <div class="label">Strategic Reflection</div>
+    <div class="content">
+      <h3>Research as a strategic lever, not a service</h3>
+      <p><strong>The model mattered more than the findings.</strong> The work that resonated most across the org wasn't the usability discoveries — it was demonstrating that <em>how</em> we did research, focused at the category level, was itself a competitive advantage. Other teams adopted the model because the outcomes spoke for themselves.</p>
+      <p><strong>Keeping customer voice central.</strong> When workshops drifted toward opinion or assumption, I anchored the team back to direct customer feedback. The role of the researcher in cross-functional spaces is often to be the one who refuses to let the data get diluted.</p>
+      <p><strong>Influencing beyond UX.</strong> The biggest indicator of the work's success: Product and Merchandising began incorporating category-specific research into their planning rhythms.</p>
+    </div>
+  </div>
+
+</section>
+
+<div class="next-case">
+  <div class="inner">
+    <div class="label">— Next Case Study</div>
+    <a href="grooming.html" class="title">Reframing consumer rituals to shape a <em>$50M global launch</em></a>
+    <div class="arrow">→</div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <span>© Natasha Brown · 2026</span>
+  <ul class="footer-nav">
+    <li><a href="../index.html">Work</a></li>
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../resume.html">Resume</a></li>
+    <li><a href="../contact.html">Contact</a></li>
+  </ul>
+  <span>researchbynatasha.com</span>
+</footer>
+
+</body>
+</html>

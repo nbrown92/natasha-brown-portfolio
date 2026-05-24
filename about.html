@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About — Natasha Brown</title>
+<meta name="description" content="Natasha Brown is a Lead UX Researcher with 10+ years across consumer goods and retail. She specializes in mixed-methods research and turning customer insight into product strategy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  .page-hero { padding: 140px 56px 60px; border-bottom: 1px solid var(--rule); }
+  .page-hero .eyebrow { margin-bottom: 48px; }
+  .page-hero h1 { font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(48px, 8vw, 120px); line-height: 1.0; letter-spacing: -0.025em; max-width: 18ch; }
+  .page-hero h1 .em { font-style: italic; color: var(--accent); }
+
+  .about-body { padding: 100px 56px; }
+  .about-body .container { display: grid; grid-template-columns: repeat(12, 1fr); gap: 32px; }
+  .about-body .lead {
+    grid-column: 1 / 10;
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: clamp(28px, 3.6vw, 44px);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 80px;
+  }
+  .about-body .lead em { font-style: italic; color: var(--accent); }
+  .about-body .body { grid-column: 1 / 8; font-size: 18px; line-height: 1.7; color: var(--ink-soft); }
+  .about-body .body p { margin-bottom: 20px; }
+  .about-body .body strong { color: var(--ink); font-weight: 600; }
+  .about-body .sidebar { grid-column: 9 / 13; }
+  .about-body .sidebar h5 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    margin-bottom: 12px;
+    margin-top: 40px;
+    font-weight: 500;
+  }
+  .about-body .sidebar h5:first-child { margin-top: 0; }
+  .about-body .sidebar ul { list-style: none; }
+  .about-body .sidebar li {
+    padding: 7px 0;
+    border-bottom: 1px solid var(--rule);
+    color: var(--ink);
+    font-size: 13px;
+  }
+
+  .principles {
+    padding: 100px 56px;
+    border-top: 1px solid var(--rule);
+    background: var(--bg-soft);
+  }
+  .principles .container { display: grid; grid-template-columns: repeat(12, 1fr); gap: 32px; }
+  .principles .heading {
+    grid-column: 1 / 5;
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: clamp(32px, 4vw, 56px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+  .principles .heading em { font-style: italic; color: var(--accent); }
+  .principles .grid {
+    grid-column: 6 / 13;
+    display: grid;
+    gap: 32px;
+  }
+  .principles .principle {
+    border-top: 1px solid var(--rule-strong);
+    padding-top: 24px;
+  }
+  .principles .principle .num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+  .principles .principle h4 {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.2;
+    margin-bottom: 12px;
+    color: var(--ink);
+  }
+  .principles .principle p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+  }
+
+  .cta-section {
+    padding: 100px 56px;
+    border-top: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 32px;
+    align-items: center;
+  }
+  .cta-section .heading {
+    grid-column: 1 / 9;
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: clamp(32px, 4.5vw, 60px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+  .cta-section .heading em { font-style: italic; color: var(--accent); }
+  .cta-section .actions {
+    grid-column: 9 / 13;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-end;
+  }
+
+  @media (max-width: 900px) {
+    .page-hero { padding: 100px 24px 40px; }
+    .about-body { padding: 60px 24px; }
+    .about-body .lead, .about-body .body, .about-body .sidebar { grid-column: 1 / 13; }
+    .about-body .sidebar { margin-top: 40px; }
+    .principles { padding: 60px 24px; }
+    .principles .heading, .principles .grid { grid-column: 1 / 13; }
+    .principles .heading { margin-bottom: 40px; }
+    .cta-section { padding: 60px 24px; }
+    .cta-section .heading, .cta-section .actions { grid-column: 1 / 13; }
+    .cta-section .actions { align-items: stretch; margin-top: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="index.html" class="logo">Natasha Brown<span class="em">.</span></a>
+  <ul>
+    <li><a href="index.html">Work</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="resume.html">Resume</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="page-hero">
+  <div class="eyebrow">About</div>
+  <h1>I help teams hear what their customers are <span class="em">actually saying</span>.</h1>
+</section>
+
+<section class="about-body">
+  <div class="container">
+    <p class="lead">Ten years in, I've learned the hardest part of research isn't the method. It's making sure the team is <em>ready to act</em> on the answer.</p>
+
+    <div class="body">
+      <p>I'm Natasha. I'm a <strong>Lead UX Researcher</strong> who defines research agendas independently and influences product strategy at the Director and VP level. I specialize in translating ambiguous customer behavior into clear product direction — and in elevating research practice beyond individual study execution.</p>
+      <p>My career has spanned <strong>consumer goods and retail</strong>. I started at <strong>Procter &amp; Gamble's Fabric Enhancers division</strong> in Cincinnati, leading longitudinal in-home research that connected consumer behavior to R&amp;D formulation and brand positioning. I moved to the <strong>Grooming division</strong> in Boston, where I owned consumer research across four global innovation programs and a $100K+ research budget. In 2022 I joined <strong>Lowe's Digital Products</strong> (Charlotte, NC) as the sole embedded researcher for a portfolio serving millions of users, working directly with Directors and VPs to shape roadmap decisions and establish research standards adopted across the broader design org. I'm based in Miami, FL.</p>
+      <p>I came to UX research from a foundation in <strong>Chemical Engineering at the University of Florida</strong>. The analytical rigor still shows up in how I work — I'm comfortable with experimental design, behavioral segmentation, and quantitative validation — but ten years in, the hardest research problems are about <strong>narrative</strong>, not numbers: getting an organization to see what its own data has been telling it.</p>
+      <p>I lead with mixed methods, mentor cross-functional partners, and build research practices that outlast individual projects. I'm equally at home running a 12-week longitudinal ethnography and pressure-testing a hypothesis with rapid qualitative validation before A/B deployment. The method serves the question, not the other way around.</p>
+    </div>
+
+    <div class="sidebar">
+      <h5>Generative &amp; Discovery</h5>
+      <ul>
+        <li>0→1 discovery programs</li>
+        <li>In-home ethnography</li>
+        <li>Longitudinal &amp; diary studies</li>
+        <li>Contextual inquiry</li>
+        <li>In-depth interviews</li>
+        <li>Concept validation</li>
+      </ul>
+
+      <h5>Evaluative &amp; Experimental</h5>
+      <ul>
+        <li>Moderated &amp; unmoderated usability</li>
+        <li>A/B testing &amp; experimentation</li>
+        <li>Card sorting / tree-testing</li>
+        <li>Heuristic audits</li>
+        <li>Session replay analysis</li>
+        <li>Journey analytics (Medallia)</li>
+      </ul>
+
+      <h5>Quantitative</h5>
+      <ul>
+        <li>Survey design at scale</li>
+        <li>MaxDiff &amp; conjoint</li>
+        <li>Behavioral segmentation</li>
+        <li>Latent Dirichlet Allocation</li>
+        <li>Quant + qual integration</li>
+      </ul>
+
+      <h5>Practice &amp; Influence</h5>
+      <ul>
+        <li>Research roadmapping</li>
+        <li>Insight repository design</li>
+        <li>Senior stakeholder advisory</li>
+        <li>AI-enhanced workflows</li>
+        <li>Research standards &amp; templates</li>
+      </ul>
+
+      <h5>Tools</h5>
+      <ul>
+        <li>Medallia · Qualtrics</li>
+        <li>Maze · UserTesting</li>
+        <li>dscout · respondent.io</li>
+        <li>aytm · Alida</li>
+        <li>Figma / FigJam</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="principles">
+  <div class="container">
+    <div class="heading">How I work — four <em>principles</em>.</div>
+    <div class="grid">
+      <div class="principle">
+        <div class="num">— 01</div>
+        <h4>Method serves the question</h4>
+        <p>I start every project by asking what decision the research needs to drive — then choose the method that gets there fastest with appropriate rigor. Surveys aren't always the answer. Neither are interviews. The discipline is in the matching.</p>
+      </div>
+      <div class="principle">
+        <div class="num">— 02</div>
+        <h4>Customer voice over consensus</h4>
+        <p>When workshops drift toward opinion or assumption, my job is to bring the data back into the room. Senior stakeholders are paid to have strong views — and the researcher is the one who refuses to let those views go unchecked.</p>
+      </div>
+      <div class="principle">
+        <div class="num">— 03</div>
+        <h4>Research as a system</h4>
+        <p>Individual studies are easy. Building a practice that compounds across teams and years is harder — and more valuable. I think about repositories, ritual, and how the next person inherits the work.</p>
+      </div>
+      <div class="principle">
+        <div class="num">— 04</div>
+        <h4>Narrative is the final method</h4>
+        <p>Insights only become decisions when they're communicated well. Storytelling is part of the craft, not optional polish on top of it. The work isn't done until the right people understand what the data is telling them.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="heading">Currently open to Lead &amp; Staff UXR roles — let's <em>talk</em>.</div>
+  <div class="actions">
+    <a href="contact.html" class="btn">Get in touch <span class="arrow">→</span></a>
+    <a href="resume.html" class="btn btn-ghost">View resume <span class="arrow">→</span></a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <span>© Natasha Brown · 2026</span>
+  <ul class="footer-nav">
+    <li><a href="index.html">Work</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="resume.html">Resume</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <span>researchbynatasha.com</span>
+</footer>
+
+</body>
+</html>

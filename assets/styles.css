@@ -1,0 +1,387 @@
+/* ============================================
+   Natasha Brown — Portfolio Design System
+   Slate blue, restrained editorial
+   ============================================ */
+
+:root {
+  --bg: #fafaf7;
+  --bg-soft: #f3f2ec;
+  --bg-deep: #e9e8e1;
+  --ink: #14181f;
+  --ink-soft: #2e3540;
+  --muted: #6b7280;
+  --muted-soft: #9aa1a9;
+  --accent: #2d5a3d;
+  --accent-soft: #4a7a5a;
+  --accent-light: #7fa78c;
+  --rule: rgba(20, 24, 31, 0.08);
+  --rule-strong: rgba(20, 24, 31, 0.18);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-feature-settings: 'ss01', 'cv11', 'kern';
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  line-height: 1.55;
+  font-weight: 400;
+}
+
+.serif { font-family: 'Instrument Serif', 'Times New Roman', serif; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+
+a { color: inherit; }
+
+/* ============================================
+   NAV — shared across all pages
+   ============================================ */
+nav.site-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 20px 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(250, 250, 247, 0.88);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--rule);
+}
+nav.site-nav .logo {
+  font-family: 'Instrument Serif', serif;
+  font-size: 22px;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  text-decoration: none;
+}
+nav.site-nav .logo .em {
+  font-style: italic;
+  color: var(--accent);
+}
+nav.site-nav ul {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+}
+nav.site-nav ul a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.005em;
+  padding: 4px 0;
+  transition: color 0.2s ease;
+  border-bottom: 1px solid transparent;
+}
+nav.site-nav ul a:hover,
+nav.site-nav ul a.active {
+  color: var(--accent);
+}
+nav.site-nav ul a.active {
+  border-bottom-color: var(--accent);
+}
+
+/* ============================================
+   SECTIONS / GRID
+   ============================================ */
+section, .page-section {
+  position: relative;
+  padding: 0 56px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 32px;
+}
+
+/* ============================================
+   TYPOGRAPHY UTILITIES
+   ============================================ */
+.eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.eyebrow::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+.label-mono {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* ============================================
+   SECTION HEAD
+   ============================================ */
+.section-head {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 32px;
+  padding-top: 120px;
+  padding-bottom: 56px;
+}
+.section-head .label {
+  grid-column: 1 / 4;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  padding-top: 14px;
+  font-weight: 500;
+}
+.section-head h2 {
+  grid-column: 4 / 13;
+  font-family: 'Instrument Serif', serif;
+  font-weight: 400;
+  font-size: clamp(36px, 5vw, 64px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.section-head h2 em { color: var(--accent); font-style: italic; }
+.section-head .sub {
+  grid-column: 4 / 12;
+  margin-top: 16px;
+  font-size: 17px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 22px;
+  background: var(--accent);
+  color: var(--bg);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  border: 1px solid var(--accent);
+  border-radius: 2px;
+  transition: background 0.2s, transform 0.2s;
+}
+.btn:hover {
+  background: var(--accent-soft);
+  border-color: var(--accent-soft);
+}
+.btn .arrow {
+  font-family: 'JetBrains Mono', monospace;
+  transition: transform 0.2s;
+}
+.btn:hover .arrow { transform: translateX(3px); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--rule-strong);
+}
+.btn-ghost:hover {
+  background: var(--bg-soft);
+  border-color: var(--ink);
+}
+
+/* ============================================
+   ARTIFACT PLACEHOLDERS
+   ============================================ */
+.artifact {
+  background: var(--bg-soft);
+  border: 1px solid var(--rule);
+  position: relative;
+  overflow: hidden;
+}
+.artifact.aspect-16-9 { aspect-ratio: 16 / 9; }
+.artifact.aspect-4-3 { aspect-ratio: 4 / 3; }
+.artifact.aspect-3-4 { aspect-ratio: 3 / 4; }
+.artifact.aspect-1-1 { aspect-ratio: 1 / 1; }
+.artifact.aspect-21-9 { aspect-ratio: 21 / 9; }
+
+.artifact .placeholder-inner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  text-align: center;
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 8px,
+    rgba(44, 62, 82, 0.04) 8px,
+    rgba(44, 62, 82, 0.04) 9px
+  );
+}
+.artifact .placeholder-inner .icon {
+  width: 48px;
+  height: 48px;
+  border: 1.5px solid var(--accent-light);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  background: var(--bg);
+  position: relative;
+}
+.artifact .placeholder-inner .icon::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 1.5px solid var(--accent);
+  border-radius: 50%;
+  top: 8px;
+  left: 8px;
+}
+.artifact .placeholder-inner .icon::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid var(--accent);
+  bottom: 8px;
+  right: 8px;
+  transform: rotate(45deg);
+}
+.artifact .placeholder-inner .ph-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.artifact .placeholder-inner .ph-desc {
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.4;
+  max-width: 320px;
+}
+.artifact .placeholder-inner .ph-meta {
+  position: absolute;
+  bottom: 16px;
+  left: 24px;
+  right: 24px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  display: flex;
+  justify-content: space-between;
+}
+
+.artifact-caption {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+  margin-top: 12px;
+  font-style: italic;
+}
+.artifact-caption strong {
+  color: var(--ink-soft);
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* Real artifact images replace the placeholder boxes */
+.artifact-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: white;
+  border: 1px solid var(--rule);
+  box-shadow: 0 4px 24px rgba(20, 24, 31, 0.05);
+}
+.artifact-img-wrap {
+  position: relative;
+}
+.artifact-img-wrap .img-label {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: rgba(250, 250, 247, 0.95);
+  backdrop-filter: blur(4px);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  font-weight: 500;
+  padding: 6px 12px;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  z-index: 2;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+footer.site-footer {
+  padding: 32px 56px;
+  margin-top: 80px;
+  border-top: 1px solid var(--rule);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--muted);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  letter-spacing: 0.02em;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+footer.site-footer .footer-nav {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+footer.site-footer .footer-nav a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+footer.site-footer .footer-nav a:hover { color: var(--accent); }
+
+/* ============================================
+   MOBILE
+   ============================================ */
+@media (max-width: 900px) {
+  nav.site-nav { padding: 16px 24px; }
+  nav.site-nav ul { gap: 18px; font-size: 13px; }
+  section, .page-section { padding: 0 24px; }
+  .section-head { padding-top: 80px; }
+  .section-head .label, .section-head h2, .section-head .sub {
+    grid-column: 1 / 13;
+  }
+  .section-head h2 { margin-top: 12px; }
+  footer.site-footer { flex-direction: column; gap: 16px; padding: 24px; text-align: center; }
+  footer.site-footer .footer-nav { flex-wrap: wrap; justify-content: center; }
+}

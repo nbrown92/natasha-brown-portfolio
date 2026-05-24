@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact — Natasha Brown</title>
+<meta name="description" content="Get in touch with Natasha Brown, Lead UX Researcher. Available for Lead and Staff UXR roles.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  .contact-page {
+    min-height: 100vh;
+    padding: 140px 56px 80px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 32px;
+    align-content: start;
+  }
+  .contact-page .eyebrow { grid-column: 1 / 13; margin-bottom: 48px; }
+  .contact-page h1 {
+    grid-column: 1 / 13;
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: clamp(64px, 11vw, 180px);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    margin-bottom: 64px;
+  }
+  .contact-page h1 .em { font-style: italic; color: var(--accent); }
+  .contact-page h1 a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 3px solid var(--accent);
+    padding-bottom: 6px;
+    transition: color 0.2s;
+  }
+  .contact-page h1 a:hover { color: var(--accent); }
+
+  .contact-page .lede {
+    grid-column: 1 / 7;
+    font-size: 19px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+  }
+  .contact-page .lede p { margin-bottom: 18px; }
+  .contact-page .lede strong { color: var(--ink); font-weight: 600; }
+  .contact-page .lede .availability {
+    margin-top: 32px;
+    padding: 16px 20px;
+    background: var(--bg-soft);
+    border-left: 2px solid var(--accent);
+    font-size: 15px;
+  }
+  .contact-page .lede .availability .dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    margin-right: 8px;
+    vertical-align: middle;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  .contact-page .channels {
+    grid-column: 8 / 13;
+  }
+  .contact-page .channels h3 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+  .contact-page .channels a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--rule-strong);
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 16px;
+    transition: padding 0.3s, color 0.2s;
+  }
+  .contact-page .channels a:first-of-type { border-top: 1px solid var(--rule-strong); }
+  .contact-page .channels a:hover { color: var(--accent); padding-left: 8px; }
+  .contact-page .channels a .label {
+    font-family: 'Instrument Serif', serif;
+    font-size: 18px;
+    line-height: 1;
+  }
+  .contact-page .channels a .handle {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    transition: color 0.2s;
+  }
+  .contact-page .channels a:hover .handle { color: var(--accent); }
+  .contact-page .channels a .arrow {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--muted);
+    margin-left: 12px;
+    transition: transform 0.2s, color 0.2s;
+  }
+  .contact-page .channels a:hover .arrow {
+    transform: translateX(4px);
+    color: var(--accent);
+  }
+  .contact-page .channels .row {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+
+  .contact-page .footer-meta {
+    grid-column: 1 / 13;
+    margin-top: 100px;
+    padding-top: 32px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+  }
+  .contact-page .footer-meta strong { color: var(--ink); font-weight: 500; }
+
+  @media (max-width: 900px) {
+    .contact-page { padding: 100px 24px 60px; }
+    .contact-page .lede, .contact-page .channels { grid-column: 1 / 13; }
+    .contact-page .channels { margin-top: 48px; }
+    .contact-page .footer-meta { flex-direction: column; gap: 8px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="index.html" class="logo">Natasha Brown<span class="em">.</span></a>
+  <ul>
+    <li><a href="index.html">Work</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="resume.html">Resume</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="contact-page">
+  <div class="eyebrow">Get in touch</div>
+
+  <h1>Let's <span class="em"><a href="mailto:natashabrown.ux@gmail.com">talk</a></span>.</h1>
+
+  <div class="lede">
+    <p>Currently open to <strong>Lead and Staff UX Researcher</strong> roles — full-time, remote, or hybrid. Happy to chat about research practice, mentorship, or speaking engagements.</p>
+    <p>The fastest way to reach me is email — I read everything and reply within a day or two.</p>
+    <div class="availability">
+      <span class="dot"></span><strong>Open to opportunities</strong> · responds within 48 hours
+    </div>
+  </div>
+
+  <div class="channels">
+    <h3>— Channels</h3>
+    <a href="mailto:natashabrown.ux@gmail.com">
+      <div class="row">
+        <span class="label">Email</span>
+        <span class="handle">natashabrown.ux@gmail.com</span>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+    <a href="https://www.linkedin.com/in/natasha-brown016/" target="_blank" rel="noopener">
+      <div class="row">
+        <span class="label">LinkedIn</span>
+        <span class="handle">/in/natasha-brown016</span>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+    <a href="tel:+17862248350">
+      <div class="row">
+        <span class="label">Phone</span>
+        <span class="handle">(786) 224-8350</span>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+    <a href="resume.html">
+      <div class="row">
+        <span class="label">Resume</span>
+        <span class="handle">Full work history</span>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+  </div>
+
+  <div class="footer-meta">
+    <span><strong>Based in</strong> Miami, FL</span>
+    <span><strong>Time zone</strong> EST / UTC-5</span>
+    <span><strong>Last updated</strong> May 2026</span>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <span>© Natasha Brown · 2026</span>
+  <ul class="footer-nav">
+    <li><a href="index.html">Work</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="resume.html">Resume</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <span>researchbynatasha.com</span>
+</footer>
+
+</body>
+</html>

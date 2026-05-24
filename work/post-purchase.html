@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lowe's Post-Purchase — Natasha Brown</title>
+<meta name="description" content="Case study: How research transformed Lowe's post-purchase experience, preserving $14M in annual revenue and reducing support calls by 12%.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/styles.css">
+<style>
+  /* CASE STUDY LAYOUT */
+  .case-hero {
+    padding: 140px 56px 60px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .case-hero .breadcrumb {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 48px;
+    letter-spacing: 0.02em;
+  }
+  .case-hero .breadcrumb a {
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .case-hero .breadcrumb a:hover { color: var(--accent); }
+  .case-hero .breadcrumb .sep { margin: 0 8px; color: var(--muted-soft); }
+
+  .case-hero .meta-top {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 32px;
+    margin-bottom: 32px;
+  }
+  .case-hero .meta-top .brand {
+    grid-column: 1 / 6;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    font-weight: 500;
+  }
+  .case-hero .meta-top .year {
+    grid-column: 10 / 13;
+    text-align: right;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+  }
+  .case-hero h1 {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: clamp(40px, 6.5vw, 92px);
+    line-height: 1.0;
+    letter-spacing: -0.025em;
+    margin-bottom: 56px;
+    max-width: 14ch;
+  }
+  .case-hero h1 .em { font-style: italic; color: var(--accent); }
+  .case-hero .summary {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 32px;
+    padding-top: 32px;
+    border-top: 1px solid var(--rule);
+  }
+  .case-hero .summary .lede {
+    grid-column: 1 / 8;
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+  .case-hero .summary .lede strong { color: var(--ink); font-weight: 600; }
+  .case-hero .summary .facts {
+    grid-column: 9 / 13;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+  .case-hero .summary .facts .row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .case-hero .summary .facts .row:first-child { border-top: 1px solid var(--rule); }
+  .case-hero .summary .facts .key {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+  }
+  .case-hero .summary .facts .val {
+    color: var(--ink);
+    font-weight: 500;
+    text-align: right;
+  }
+
+  /* CASE BODY */
+  .case-body { padding: 80px 56px; }
+  .case-section {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 32px;
+    margin-bottom: 80px;
+  }
+  .case-section .label {
+    grid-column: 1 / 4;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    padding-top: 8px;
+    font-weight: 500;
+  }
+  .case-section .content {
+    grid-column: 4 / 12;
+  }
+  .case-section .content h3 {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: clamp(28px, 3.4vw, 44px);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 28px;
+    color: var(--ink);
+  }
+  .case-section .content h3 em { color: var(--accent); font-style: italic; }
+  .case-section .content p {
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    margin-bottom: 18px;
+  }
+  .case-section .content p strong { color: var(--ink); font-weight: 600; }
+  .case-section .content ul {
+    list-style: none;
+    margin: 16px 0;
+  }
+  .case-section .content ul li {
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    padding: 6px 0 6px 24px;
+    position: relative;
+  }
+  .case-section .content ul li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+  }
+
+  /* CHALLENGE BLOCK */
+  .challenge-block {
+    padding: 64px 56px;
+    background: var(--bg-soft);
+    border-top: 1px solid var(--rule-strong);
+    border-bottom: 1px solid var(--rule-strong);
+    margin: 0 0 80px;
+  }
+  .challenge-block .inner {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 32px;
+  }
+  .challenge-block .label {
+    grid-column: 1 / 4;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    padding-top: 12px;
+    font-weight: 500;
+  }
+  .challenge-block .statement {
+    grid-column: 4 / 12;
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(26px, 3.6vw, 42px);
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+  }
+
+  /* PROCESS PHASES */
+  .process-phases {
+    grid-column: 4 / 13;
+    display: grid;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  .process-phases.phases-4 { grid-template-columns: repeat(4, 1fr); }
+  .process-phases.phases-3 { grid-template-columns: repeat(3, 1fr); }
+  .process-phases .phase {
+    background: var(--bg-soft);
+    padding: 24px;
+    border-top: 2px solid var(--accent);
+  }
+  .process-phases .phase .pnum {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .process-phases .phase h5 {
+    font-family: 'Instrument Serif', serif;
+    font-size: 22px;
+    font-weight: 400;
+    margin: 4px 0 14px;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+  .process-phases .phase ul {
+    list-style: none;
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+  .process-phases .phase li {
+    padding: 4px 0 4px 14px;
+    position: relative;
+  }
+  .process-phases .phase li::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: bold;
+  }
+
+  /* ARTIFACT GALLERY */
+  .artifact-gallery {
+    padding: 0 56px 80px;
+  }
+  .artifact-gallery .gallery-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 24px;
+    font-weight: 500;
+  }
+  .artifact-gallery.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .artifact-gallery.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .artifact-gallery.full-width .artifact {
+    margin-bottom: 0;
+  }
+
+  /* PULL QUOTE */
+  .pull-quote {
+    padding: 40px 56px 80px;
+  }
+  .pull-quote .inner {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 32px;
+  }
+  .pull-quote blockquote {
+    grid-column: 3 / 11;
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(26px, 3.6vw, 40px);
+    line-height: 1.3;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    padding-left: 32px;
+    border-left: 2px solid var(--accent);
+  }
+  .pull-quote blockquote cite {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-style: normal;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+    margin-top: 24px;
+    text-transform: uppercase;
+  }
+
+  /* IMPACT GRID */
+  .impact-grid {
+    padding: 64px 56px;
+    background: var(--accent);
+    color: var(--bg);
+    margin: 80px 0;
+  }
+  .impact-grid .inner {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 32px;
+  }
+  .impact-grid .label {
+    grid-column: 1 / 13;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent-light);
+    margin-bottom: 32px;
+    font-weight: 500;
+  }
+  .impact-grid .stats {
+    grid-column: 1 / 13;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  }
+  .impact-grid .stat {
+    padding: 28px 24px;
+    border-right: 1px solid rgba(255, 255, 255, 0.12);
+  }
+  .impact-grid .stat:last-child { border-right: none; }
+  .impact-grid .stat .num {
+    font-family: 'Instrument Serif', serif;
+    font-size: 56px;
+    line-height: 1;
+    font-weight: 400;
+    letter-spacing: -0.025em;
+    color: var(--bg);
+  }
+  .impact-grid .stat .num .unit { font-size: 20px; opacity: 0.7; }
+  .impact-grid .stat .num em { font-style: italic; color: #b8d4e8; }
+  .impact-grid .stat .lbl {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 14px;
+    line-height: 1.5;
+    opacity: 0.75;
+  }
+
+  /* NEXT CASE */
+  .next-case {
+    padding: 80px 56px;
+    border-top: 1px solid var(--rule);
+    background: var(--bg);
+  }
+  .next-case .inner {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 32px;
+    align-items: center;
+  }
+  .next-case .label {
+    grid-column: 1 / 4;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+  }
+  .next-case .title {
+    grid-column: 4 / 11;
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: clamp(28px, 4vw, 48px);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .next-case .title:hover { color: var(--accent); }
+  .next-case .title em { font-style: italic; color: var(--accent); }
+  .next-case .arrow {
+    grid-column: 12 / 13;
+    text-align: right;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 24px;
+    color: var(--accent);
+  }
+
+  @media (max-width: 900px) {
+    .case-hero { padding: 100px 24px 40px; }
+    .case-hero .meta-top .brand,
+    .case-hero .meta-top .year {
+      grid-column: 1 / 13;
+      text-align: left;
+    }
+    .case-hero .summary .lede,
+    .case-hero .summary .facts { grid-column: 1 / 13; }
+    .case-hero .summary .facts { margin-top: 24px; }
+    .case-body { padding: 60px 24px; }
+    .case-section .label,
+    .case-section .content,
+    .process-phases { grid-column: 1 / 13; }
+    .process-phases.phases-4,
+    .process-phases.phases-3 { grid-template-columns: 1fr; }
+    .challenge-block { padding: 40px 24px; margin-bottom: 60px; }
+    .challenge-block .label, .challenge-block .statement { grid-column: 1 / 13; }
+    .artifact-gallery { padding: 0 24px 60px; }
+    .artifact-gallery.grid-2,
+    .artifact-gallery.grid-3 { grid-template-columns: 1fr; gap: 20px; }
+    .pull-quote { padding: 20px 24px 60px; }
+    .pull-quote blockquote { grid-column: 1 / 13; }
+    .impact-grid { padding: 40px 24px; margin: 60px 0; }
+    .impact-grid .stats { grid-template-columns: 1fr 1fr; }
+    .impact-grid .stat:nth-child(2) { border-right: none; }
+    .impact-grid .stat:nth-child(1),
+    .impact-grid .stat:nth-child(2) { border-bottom: 1px solid rgba(255, 255, 255, 0.12); }
+    .next-case { padding: 60px 24px; }
+    .next-case .label,
+    .next-case .title,
+    .next-case .arrow { grid-column: 1 / 13; text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="../index.html" class="logo">Natasha Brown<span class="em">.</span></a>
+  <ul>
+    <li><a href="../index.html" class="active">Work</a></li>
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../resume.html">Resume</a></li>
+    <li><a href="../contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="case-hero">
+  <div class="breadcrumb">
+    <a href="../index.html">Work</a><span class="sep">/</span>Post-Purchase UX
+  </div>
+  <div class="meta-top">
+    <div class="brand">Lowe's · Sr. Product Researcher (Lead IC)</div>
+    <div class="year">2024 — 2025</div>
+  </div>
+  <h1>Transforming the post-purchase experience to <span class="em">reduce churn</span> and drive revenue growth.</h1>
+  <div class="summary">
+    <div class="lede">
+      Managing orders post-purchase is a critical, yet often overlooked, touchpoint for driving customer retention and loyalty. As <strong>sole embedded researcher</strong> for this portfolio, I made the case to leadership that post-purchase was both a risk and an opportunity — the first chance to re-engage customers and the last to build trust. My research surfaced clear pathways to <strong>improve loyalty, reduce service contacts, and preserve at-risk revenue.</strong>
+    </div>
+    <div class="facts">
+      <div class="row"><span class="key">Timeline</span><span class="val">3.5 months</span></div>
+      <div class="row"><span class="key">Phase</span><span class="val">Discover · Define · Test</span></div>
+      <div class="row"><span class="key">Methods</span><span class="val">Session replay · Complaint clustering · 24 mod usability</span></div>
+      <div class="row"><span class="key">Stakeholders</span><span class="val">4 PMs · VP Product · Fulfillment · Eng</span></div>
+      <div class="row"><span class="key">Impact</span><span class="val">$14M revenue · -12% calls</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="challenge-block">
+  <div class="inner">
+    <div class="label">The Challenge</div>
+    <div class="statement">Over half of online customers abandoned Lowe's within 12 months — a critical signal of post-purchase friction impacting retention, loyalty, and revenue.</div>
+  </div>
+</div>
+
+<section class="case-body">
+
+  <div class="case-section">
+    <div class="label">Context</div>
+    <div class="content">
+      <h3>Reframing post-purchase from operational concern to <em>growth opportunity</em></h3>
+      <p>The post-purchase experience was viewed inside Lowe's as outside UX's influence — a logistics problem, not a strategic one. As the <strong>sole embedded researcher</strong> for the digital products portfolio, I set the research agenda independently and worked directly with Directors and VPs of Product to make the case for investment.</p>
+      <p>The work needed to do two things at once: solve the immediate churn problem, and shift how leadership thought about post-purchase as a growth lever.</p>
+    </div>
+  </div>
+
+  <div class="case-section">
+    <div class="label">Research Goals</div>
+    <div class="content">
+      <ul>
+        <li>Identify friction points in the post-purchase experience contributing to churn</li>
+        <li>Prioritize content and IA needs for an improved experience</li>
+        <li>Evaluate and refine design solutions to make repurchasing more seamless</li>
+      </ul>
+    </div>
+  </div>
+
+</section>
+
+<div class="artifact-gallery full-width">
+  <div class="gallery-label">— Strategic Process Overview</div>
+  <div class="artifact aspect-21-9">
+    <div class="placeholder-inner">
+      <div class="icon"></div>
+      <div class="ph-label">Process Diagram</div>
+      <div class="ph-desc">Four-phase research approach: Discovery → Definition → Concept → Refine. Nov '24 – Feb '25.</div>
+      <div class="ph-meta">
+        <span>Artifact 01</span>
+        <span>Replace with: process_diagram.png</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="case-body" style="padding-top: 0;">
+
+  <div class="case-section">
+    <div class="label">Approach</div>
+    <div class="content">
+      <h3>A four-phase mixed-methods strategy</h3>
+      <p>I designed the research to move the team from problem framing to roadmap-ready execution in 3.5 months. Each phase had a clear question, a defined method, and a stakeholder readout to keep alignment tight.</p>
+    </div>
+    <div class="process-phases phases-4">
+      <div class="phase">
+        <div class="pnum">01 / Discover</div>
+        <h5>Discovery</h5>
+        <ul>
+          <li>Session replay analysis across funnels</li>
+          <li>Customer complaint clustering</li>
+          <li>24 moderated usability sessions</li>
+          <li>Voice of Customer (Medallia Q2/Q3)</li>
+          <li>Heuristic audit</li>
+        </ul>
+      </div>
+      <div class="phase">
+        <div class="pnum">02 / Define</div>
+        <h5>Definition</h5>
+        <ul>
+          <li>Competitive analysis: 20+ flows</li>
+          <li>Affinity mapping</li>
+          <li>Problem statement development</li>
+          <li>"How Might We" workshops</li>
+          <li>Cross-functional alignment</li>
+        </ul>
+      </div>
+      <div class="phase">
+        <div class="pnum">03 / Concept</div>
+        <h5>Concept</h5>
+        <ul>
+          <li>Card sorting (DIY vs Pro)</li>
+          <li>Wireframes for mental models</li>
+          <li>Prototypes for core flows</li>
+          <li>Content guideline testing</li>
+          <li>Moderated usability testing</li>
+        </ul>
+      </div>
+      <div class="phase">
+        <div class="pnum">04 / Refine</div>
+        <h5>Refine</h5>
+        <ul>
+          <li>Iterative testing</li>
+          <li>Launch planning with Product &amp; Eng</li>
+          <li>Stakeholder buy-in on North Star</li>
+          <li>Roadmap-ready handoff</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="artifact-gallery grid-2">
+  <div>
+    <div class="artifact aspect-4-3">
+      <div class="placeholder-inner">
+        <div class="icon"></div>
+        <div class="ph-label">Quantitative Analysis</div>
+        <div class="ph-desc">Top reasons for customer churn at Lowe's — LDA analysis on Medallia + survey data.</div>
+        <div class="ph-meta">
+          <span>Artifact 02</span>
+          <span>Replace with: churn_drivers.png</span>
+        </div>
+      </div>
+    </div>
+    <div class="artifact-caption"><strong>Discovery output:</strong> Quantitative analysis identified fulfillment, customer service, and communication as top churn drivers — not pricing.</div>
+  </div>
+  <div>
+    <div class="artifact aspect-4-3">
+      <div class="placeholder-inner">
+        <div class="icon"></div>
+        <div class="ph-label">LTR Comparison</div>
+        <div class="ph-desc">Lowe's LTR vs competitors. -82.6 vs +32.6 — customers weren't leaving for cheaper, they were leaving for clearer.</div>
+        <div class="ph-meta">
+          <span>Artifact 03</span>
+          <span>Replace with: ltr_comparison.png</span>
+        </div>
+      </div>
+    </div>
+    <div class="artifact-caption"><strong>Discovery output:</strong> Likelihood-to-Return scoring showed Lowe's significantly underperforming competitors in post-purchase.</div>
+  </div>
+</div>
+
+<section class="case-body" style="padding-top: 0;">
+
+  <div class="case-section">
+    <div class="label">Key Insights</div>
+    <div class="content">
+      <h3>What the data told us — and what the team had been missing</h3>
+      <p><strong>Fulfillment, customer service, and communication</strong> were the top three drivers of churn — not pricing or product quality, as the team had initially assumed.</p>
+      <p>Lowe's LTR scored <strong>-82.6 against competitors at +32.6</strong>: customers weren't leaving for cheaper options; they were leaving for clearer ones. DIY and Pro customers had fundamentally different needs being served by the same generic experience.</p>
+    </div>
+  </div>
+
+</section>
+
+<div class="artifact-gallery full-width">
+  <div class="gallery-label">— Synthesis &amp; Alignment</div>
+  <div class="artifact aspect-21-9">
+    <div class="placeholder-inner">
+      <div class="icon"></div>
+      <div class="ph-label">Affinity Mapping Workshop</div>
+      <div class="ph-desc">Cross-functional workshop boards translating insights into Jobs-to-Be-Done and prioritized problem statements.</div>
+      <div class="ph-meta">
+        <span>Artifact 04</span>
+        <span>Replace with: affinity_workshop.png</span>
+      </div>
+    </div>
+  </div>
+  <div class="artifact-caption" style="margin-top: 16px;"><strong>Definition phase:</strong> Structured problem-definition process transformed scattered insights into two core problems driving churn risk.</div>
+</div>
+
+<div class="pull-quote">
+  <div class="inner">
+    <blockquote>
+      "The team initially undervalued post-purchase — it was viewed as outside UX's influence. The data made it impossible to ignore."
+      <cite>— Reflection from project debrief</cite>
+    </blockquote>
+  </div>
+</div>
+
+<section class="case-body" style="padding-top: 0;">
+
+  <div class="case-section">
+    <div class="label">Defining the Problems</div>
+    <div class="content">
+      <h3>Two problems worth solving</h3>
+      <p><strong>Customers don't have the information they need.</strong> DIY customers don't feel fully informed about their orders, next steps, or item-specific support options — leaving them confused and helpless. This drives support calls and reduces loyalty.</p>
+      <p><strong>Customers don't have a clear way to fix issues.</strong> DIY customers struggle to resolve order issues due to limited self-service options and unclear resolution paths, increasing reliance on support channels.</p>
+    </div>
+  </div>
+
+</section>
+
+<div class="artifact-gallery grid-3">
+  <div>
+    <div class="artifact aspect-3-4">
+      <div class="placeholder-inner">
+        <div class="icon"></div>
+        <div class="ph-label">Card Sort — IA</div>
+        <div class="ph-desc">Order History &amp; Order Details for DIY vs Pro segments.</div>
+        <div class="ph-meta">
+          <span>Artifact 05</span>
+          <span>Replace</span>
+        </div>
+      </div>
+    </div>
+    <div class="artifact-caption"><strong>Concept:</strong> Card sort surfaced distinct IA priorities by customer type.</div>
+  </div>
+  <div>
+    <div class="artifact aspect-3-4">
+      <div class="placeholder-inner">
+        <div class="icon"></div>
+        <div class="ph-label">User Needs Mapping</div>
+        <div class="ph-desc">Pre and post-fulfillment touchpoints across order and item levels.</div>
+        <div class="ph-meta">
+          <span>Artifact 06</span>
+          <span>Replace</span>
+        </div>
+      </div>
+    </div>
+    <div class="artifact-caption"><strong>Concept:</strong> Mapped user needs &amp; CTAs to identify gaps in entry points.</div>
+  </div>
+  <div>
+    <div class="artifact aspect-3-4">
+      <div class="placeholder-inner">
+        <div class="icon"></div>
+        <div class="ph-label">Usability Testing</div>
+        <div class="ph-desc">Moderated sessions validating IA hierarchy &amp; new prototypes.</div>
+        <div class="ph-meta">
+          <span>Artifact 07</span>
+          <span>Replace</span>
+        </div>
+      </div>
+    </div>
+    <div class="artifact-caption"><strong>Refine:</strong> Iterative usability testing validated the redesigned flows.</div>
+  </div>
+</div>
+
+<section class="case-body" style="padding-top: 0;">
+
+  <div class="case-section">
+    <div class="label">What Shipped</div>
+    <div class="content">
+      <h3>Research that <em>shaped</em> the final customer experience</h3>
+      <p><strong>Restructured Order Confirmation.</strong> Savings and loyalty points, prominent ETA, item imagery, editable delivery instructions, and fulfillment-specific next steps — all above the fold.</p>
+      <p><strong>New "Fix an Issue" CTA.</strong> Captures customers who don't want to start a return — letting the business save the sale with flexible support solutions.</p>
+      <p><strong>New Item Details sub-page.</strong> Consolidates protection plans, configured item details, return policies, and downloadable user manuals — in direct response to users who couldn't find product information after purchase.</p>
+      <p><strong>Reframed roadmap.</strong> Post-purchase elevated to a strategic focus area for leadership going forward.</p>
+    </div>
+  </div>
+
+</section>
+
+<div class="artifact-gallery grid-3">
+  <div>
+    <div class="artifact aspect-3-4">
+      <div class="placeholder-inner">
+        <div class="icon"></div>
+        <div class="ph-label">Before &amp; After</div>
+        <div class="ph-desc">Order Confirmation page — restructured to prioritize savings, ETA, item details.</div>
+        <div class="ph-meta"><span>Artifact 08</span><span>Replace</span></div>
+      </div>
+    </div>
+    <div class="artifact-caption"><strong>Shipped:</strong> Order Confirmation redesign.</div>
+  </div>
+  <div>
+    <div class="artifact aspect-3-4">
+      <div class="placeholder-inner">
+        <div class="icon"></div>
+        <div class="ph-label">Before &amp; After</div>
+        <div class="ph-desc">Order Tracking — new "Need to Make Any Changes?" module + reschedule flow.</div>
+        <div class="ph-meta"><span>Artifact 09</span><span>Replace</span></div>
+      </div>
+    </div>
+    <div class="artifact-caption"><strong>Shipped:</strong> Order modification entry points reduced call center load.</div>
+  </div>
+  <div>
+    <div class="artifact aspect-3-4">
+      <div class="placeholder-inner">
+        <div class="icon"></div>
+        <div class="ph-label">Before &amp; After</div>
+        <div class="ph-desc">Purchase History &amp; new Item Details sub-page — consolidating support info.</div>
+        <div class="ph-meta"><span>Artifact 10</span><span>Replace</span></div>
+      </div>
+    </div>
+    <div class="artifact-caption"><strong>Shipped:</strong> New Item Details page — directly addressing user research findings.</div>
+  </div>
+</div>
+
+<div class="impact-grid">
+  <div class="inner">
+    <div class="label">— Measured Impact</div>
+    <div class="stats">
+      <div class="stat">
+        <div class="num"><em>$14M</em></div>
+        <div class="lbl">Annual revenue preserved<br>By addressing friction points</div>
+      </div>
+      <div class="stat">
+        <div class="num">-12<span class="unit">%</span></div>
+        <div class="lbl">Support call volume<br>Lower service costs</div>
+      </div>
+      <div class="stat">
+        <div class="num">24</div>
+        <div class="lbl">Moderated usability sessions<br>+ session replay + complaints</div>
+      </div>
+      <div class="stat">
+        <div class="num">+12<span class="unit">pts</span></div>
+        <div class="lbl">NPS lift on the redesigned flow<br>Long-term retention signal</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="case-body" style="padding-top: 0;">
+
+  <div class="case-section">
+    <div class="label">Leadership Reflection</div>
+    <div class="content">
+      <h3>How I grew as a leader on this <em>initiative</em></h3>
+      <p><strong>Solving the right problem.</strong> On large-scale projects, it's easy for teams to get lost in detail. I learned the importance of continually steering the team back to the customer problems that delivered meaningful value to users and the business.</p>
+      <p><strong>Influencing mindsets.</strong> The organization initially undervalued post-purchase. I learned to strengthen my advocacy — using data to highlight the value of retention over acquisition, and positioning this work as core to long-term growth.</p>
+      <p><strong>Leading without authority.</strong> As the sole embedded researcher, I had no direct reports — but I had to influence designers, PMs, and engineering leads to act on findings. I learned to use psychological safety, clear documentation, and consistent storytelling as leadership tools when formal authority isn't available.</p>
+      <p><strong>Owning the story.</strong> Storytelling is essential to UX leadership. Despite differing opinions on how to present the work, I maintained control of the narrative to ensure our research insights were communicated clearly, persuasively, and aligned to both user and business outcomes.</p>
+    </div>
+  </div>
+
+</section>
+
+<div class="next-case">
+  <div class="inner">
+    <div class="label">— Next Case Study</div>
+    <a href="blinds-shades.html" class="title">Pioneering <em>category-specific</em> UXR at Lowe's</a>
+    <div class="arrow">→</div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <span>© Natasha Brown · 2026</span>
+  <ul class="footer-nav">
+    <li><a href="../index.html">Work</a></li>
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../resume.html">Resume</a></li>
+    <li><a href="../contact.html">Contact</a></li>
+  </ul>
+  <span>researchbynatasha.com</span>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Resume — Natasha Brown</title>
+<meta name="description" content="Resume of Natasha Brown, Lead UX Researcher. 10+ years across Procter & Gamble and Lowe's. Available for Lead and Staff UXR roles.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  .page-hero { padding: 140px 56px 60px; border-bottom: 1px solid var(--rule); }
+  .page-hero .eyebrow { margin-bottom: 48px; }
+  .page-hero .header-row { display: grid; grid-template-columns: repeat(12, 1fr); gap: 32px; align-items: end; }
+  .page-hero h1 {
+    grid-column: 1 / 9;
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: clamp(48px, 8vw, 120px);
+    line-height: 1.0;
+    letter-spacing: -0.025em;
+    max-width: 14ch;
+  }
+  .page-hero h1 .em { font-style: italic; color: var(--accent); }
+  .page-hero .download {
+    grid-column: 10 / 13;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-end;
+  }
+
+  .resume-summary {
+    padding: 60px 56px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .resume-summary .container { display: grid; grid-template-columns: repeat(12, 1fr); gap: 32px; }
+  .resume-summary .label {
+    grid-column: 1 / 4;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    padding-top: 8px;
+    font-weight: 500;
+  }
+  .resume-summary .text {
+    grid-column: 4 / 11;
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+  }
+  .resume-summary .text strong { color: var(--ink); font-weight: 600; }
+
+  .resume-section {
+    padding: 80px 56px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .resume-section .container { display: grid; grid-template-columns: repeat(12, 1fr); gap: 32px; }
+  .resume-section .section-label {
+    grid-column: 1 / 4;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    padding-top: 8px;
+    font-weight: 500;
+  }
+  .resume-section .section-content { grid-column: 4 / 13; }
+
+  .role {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 32px;
+    padding: 24px 0;
+    border-top: 1px solid var(--rule);
+  }
+  .role:first-child { border-top: none; padding-top: 0; }
+  .role .date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+    padding-top: 4px;
+  }
+  .role .body { padding-top: 0; }
+  .role h3 {
+    font-family: 'Instrument Serif', serif;
+    font-size: 26px;
+    line-height: 1.15;
+    font-weight: 400;
+    letter-spacing: -0.015em;
+    margin-bottom: 4px;
+    color: var(--ink);
+  }
+  .role .co {
+    font-size: 14px;
+    color: var(--accent);
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+  .role ul {
+    list-style: none;
+    margin-top: 12px;
+  }
+  .role ul li {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    padding: 4px 0 4px 22px;
+    position: relative;
+  }
+  .role ul li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+  }
+  .role ul li strong { color: var(--ink); font-weight: 600; }
+
+  .three-col-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+  }
+  .three-col-grid h4 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+  .three-col-grid ul { list-style: none; }
+  .three-col-grid ul li {
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--rule);
+    color: var(--ink-soft);
+  }
+  .three-col-grid ul li strong { color: var(--ink); font-weight: 600; }
+
+  .cta-section {
+    padding: 100px 56px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 32px;
+    align-items: center;
+  }
+  .cta-section .heading {
+    grid-column: 1 / 9;
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: clamp(32px, 4.5vw, 60px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+  .cta-section .heading em { font-style: italic; color: var(--accent); }
+  .cta-section .actions {
+    grid-column: 9 / 13;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-end;
+  }
+
+  @media print {
+    nav.site-nav, footer.site-footer, .cta-section, .page-hero .download { display: none; }
+    body { background: white; color: black; }
+    .resume-section, .resume-summary { border-bottom: 1px solid #ddd; }
+  }
+
+  @media (max-width: 900px) {
+    .page-hero { padding: 100px 24px 40px; }
+    .page-hero h1, .page-hero .download { grid-column: 1 / 13; text-align: left; align-items: flex-start; }
+    .page-hero .download { margin-top: 24px; }
+    .resume-summary, .resume-section { padding: 40px 24px; }
+    .resume-summary .label, .resume-summary .text,
+    .resume-section .section-label, .resume-section .section-content { grid-column: 1 / 13; }
+    .resume-section .section-content { margin-top: 16px; }
+    .role { grid-template-columns: 1fr; gap: 8px; }
+    .three-col-grid { grid-template-columns: 1fr; gap: 32px; }
+    .cta-section { padding: 60px 24px; }
+    .cta-section .heading, .cta-section .actions { grid-column: 1 / 13; }
+    .cta-section .actions { align-items: stretch; margin-top: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="index.html" class="logo">Natasha Brown<span class="em">.</span></a>
+  <ul>
+    <li><a href="index.html">Work</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="resume.html" class="active">Resume</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="page-hero">
+  <div class="eyebrow">Resume · Updated May 2026</div>
+  <div class="header-row">
+    <h1>Lead UX <span class="em">Researcher</span>.</h1>
+    <div class="download">
+      <a href="#" class="btn">Download PDF <span class="arrow">↓</span></a>
+      <a href="https://www.linkedin.com/in/natasha-brown016/" target="_blank" rel="noopener" class="btn btn-ghost">View on LinkedIn <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="resume-summary">
+  <div class="container">
+    <div class="label">Summary</div>
+    <div class="text">
+      Lead UX Researcher with <strong>9+ years</strong> owning research strategy across digital products, omnichannel ecosystems, and consumer innovation. Defines research agendas independently, synthesizes behavioral and quantitative signals into product-shaping recommendations, and influences roadmap decisions at the <strong>Director and VP level</strong>. Methodological depth across generative, evaluative, and experimental research — with a track record of translating complex user behavior into 0→1 product direction, measurable business outcomes, and organization-wide research standards. Known for operating with <strong>Senior IC autonomy</strong> while elevating research practice beyond individual study execution.
+    </div>
+  </div>
+</section>
+
+<section class="resume-section">
+  <div class="container">
+    <div class="section-label">— Experience</div>
+    <div class="section-content">
+
+      <div class="role">
+        <div class="date">2022 — 2026<br><span style="color:var(--muted-soft); font-size: 11px;">Charlotte, NC</span></div>
+        <div class="body">
+          <h3>Senior Product Researcher (Lead IC)</h3>
+          <div class="co">Lowe's Companies — Digital Products</div>
+          <p style="font-size: 14px; color: var(--muted); margin-bottom: 14px; line-height: 1.5;">Sole embedded researcher for a portfolio of consumer digital products serving millions of users, operating with full autonomy to set the research agenda, prioritize questions, and translate findings into strategic direction. Partner directly with Directors and VPs of Product to shape roadmap decisions and challenge assumptions before investment. Established research standards and synthesis frameworks adopted across the broader product design org.</p>
+          <ul>
+            <li>Identified post-purchase journey failures through a multi-method study combining <strong>session replay analysis, customer complaint clustering, and 24 moderated usability sessions</strong> — surfacing friction points that, when addressed by the product team, contributed to a <strong>12% reduction in support call volume</strong> and preservation of <strong>$14M in annual revenue</strong>.</li>
+            <li>Designed and led a <strong>0→1 discovery research program</strong> for a personalized home platform — including contextual inquiry, diary studies, and concept validation across 60+ participants — that defined the product vision, surfaced three high-value use cases not in the original brief, and directly informed early feature prioritization with the VP of Product.</li>
+            <li>Built an <strong>experimentation research framework</strong> pairing behavioral analytics with rapid qualitative validation to pressure-test product hypotheses before A/B deployment, contributing to a sustained <strong>15% improvement in conversion rates</strong> across key digital touchpoints.</li>
+            <li>Established <strong>research synthesis templates and an insight repository</strong> adopted org-wide, reducing duplicative research requests and enabling product teams to self-serve past findings — extending the reach of research beyond individual study deliverables.</li>
+            <li>Led foundational <strong>category-specific research</strong> for Blinds &amp; Shades — pairing a 120-respondent survey with 7 moderated usability sessions — that informed a redesigned product list page and configurator and contributed to <strong>+4% add-to-cart and +18bps LTR</strong>. The research model was later adopted by other teams across the digital org.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="role">
+        <div class="date">2020 — 2022<br><span style="color:var(--muted-soft); font-size: 11px;">Boston, MA</span></div>
+        <div class="body">
+          <h3>Product Researcher</h3>
+          <div class="co">Procter &amp; Gamble — Grooming Division</div>
+          <p style="font-size: 14px; color: var(--muted); margin-bottom: 14px; line-height: 1.5;">Led consumer research across four global product innovation programs, setting the research agenda from early-stage discovery through commercialization. Chose and designed methods — including ethnographic studies, longitudinal in-home usage testing, and concept validation — based on the specific decision each stage required. Managed a $100K+ research budget and coordinated external vendors and international stakeholder teams across four countries.</p>
+          <ul>
+            <li>Uncovered through <strong>in-home ethnographic research</strong> that consumers had developed grooming rituals substantially at odds with the brand's existing usage assumptions — a finding that reframed the product positioning strategy and informed claims development for a <strong>$50M product launch</strong>.</li>
+            <li>Translated longitudinal usage data and qual synthesis into <strong>go-to-market recommendations</strong> that aligned consumer behavior evidence with commercial goals, contributing to an <strong>8% increase in sales performance</strong> in the launch period.</li>
+            <li>Developed and maintained a <strong>multi-phase research roadmap</strong> spanning concept screening through post-launch evaluation, ensuring research cadence matched product development gates and executive review cycles.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="role">
+        <div class="date">2016 — 2020<br><span style="color:var(--muted-soft); font-size: 11px;">Cincinnati, OH</span></div>
+        <div class="body">
+          <h3>Product Researcher</h3>
+          <div class="co">Procter &amp; Gamble — Fabric Enhancers Division</div>
+          <p style="font-size: 14px; color: var(--muted); margin-bottom: 14px; line-height: 1.5;">Contributed research strategy to a $100M product innovation program, leading longitudinal consumer studies to surface behavioral adoption patterns across key user segments. Worked cross-functionally with R&amp;D and brand teams to translate consumer insight into product direction and sub-brand positioning.</p>
+          <ul>
+            <li>Conducted <strong>longitudinal in-home research</strong> tracking product adoption behavior over 12 weeks across three consumer segments, identifying that adoption was driven by olfactory ritual rather than functional performance — a behavioral insight that directly informed the positioning and naming of a new sub-brand generating <strong>$25M in first-year sales</strong>.</li>
+            <li>Collaborated with R&amp;D to connect consumer behavioral findings with product formulation decisions, ensuring that manufacturing and sensory attributes were optimized for the specific usage rituals consumers had demonstrated — not assumed — in research.</li>
+            <li>Earned the <strong>R&amp;D Bold Innovation Award</strong> for research-driven contributions to cross-functional innovation leadership.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="resume-section">
+  <div class="container">
+    <div class="section-label">— Core Competencies</div>
+    <div class="section-content">
+      <div class="three-col-grid" style="grid-template-columns: 1fr 1fr;">
+        <div>
+          <h4>Research Strategy &amp; Methods</h4>
+          <ul>
+            <li>Mixed-methods research design</li>
+            <li>Generative &amp; evaluative research</li>
+            <li>0→1 discovery</li>
+            <li>Longitudinal &amp; diary studies</li>
+            <li>Ethnographic &amp; in-context research</li>
+            <li>Concept validation</li>
+            <li>Usability testing</li>
+            <li>Survey design</li>
+            <li>Quant + qual integration</li>
+            <li>A/B testing &amp; experimentation</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Influence &amp; Organizational Impact</h4>
+          <ul>
+            <li>Research roadmapping</li>
+            <li>Insight synthesis &amp; storytelling</li>
+            <li>Senior stakeholder advisory</li>
+            <li>Cross-functional influence</li>
+            <li>Product strategy alignment</li>
+            <li>Customer journey mapping</li>
+            <li>AI-enhanced research workflows</li>
+            <li>Research practice development</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="resume-section">
+  <div class="container">
+    <div class="section-label">— Tools</div>
+    <div class="section-content">
+      <div class="three-col-grid">
+        <div>
+          <h4>Survey &amp; Quant Platforms</h4>
+          <ul>
+            <li>Qualtrics</li>
+            <li>Survey Monkey</li>
+            <li>aytm</li>
+            <li>Alida</li>
+            <li>Microsoft Forms</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Qual &amp; Usability Platforms</h4>
+          <ul>
+            <li>Maze</li>
+            <li>UserTesting</li>
+            <li>dscout</li>
+            <li>respondent.io</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Experience &amp; Design</h4>
+          <ul>
+            <li>Medallia</li>
+            <li>Figma / FigJam</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="resume-section">
+  <div class="container">
+    <div class="section-label">— Education &amp; Certifications</div>
+    <div class="section-content">
+      <div class="three-col-grid">
+        <div>
+          <h4>Education</h4>
+          <ul>
+            <li><strong>Bachelor of Science</strong><br>Chemical Engineering</li>
+            <li>University of Florida</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Certifications</h4>
+          <ul>
+            <li>Google AI Professional <em>(In Progress)</em></li>
+            <li>Google Data Analytics</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Recognition</h4>
+          <ul>
+            <li>R&amp;D Bold Innovation Award</li>
+            <li><span style="font-size: 11px; color: var(--muted-soft);">Procter &amp; Gamble</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="heading">Currently open to Lead &amp; Staff UXR roles — let's <em>talk</em>.</div>
+  <div class="actions">
+    <a href="contact.html" class="btn">Get in touch <span class="arrow">→</span></a>
+    <a href="index.html" class="btn btn-ghost">See my work <span class="arrow">→</span></a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <span>© Natasha Brown · 2026</span>
+  <ul class="footer-nav">
+    <li><a href="index.html">Work</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="resume.html">Resume</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <span>researchbynatasha.com</span>
+</footer>
+
+</body>
+</html>
