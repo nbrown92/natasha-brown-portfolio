@@ -134,6 +134,22 @@
     .cta-section .heading, .cta-section .actions { grid-column: 1 / 13; }
     .cta-section .actions { align-items: stretch; margin-top: 24px; }
   }
+
+.about-photo {
+  grid-column: 9 / 13;
+  margin-bottom: 40px;
+}
+.about-photo img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 4px;
+  display: block;
+}
+@media (max-width: 900px) {
+  .about-photo { grid-column: 1 / 13; max-width: 280px; }
+}
 </style>
 </head>
 <body>
@@ -164,6 +180,9 @@
       <p>I lead with mixed methods, mentor cross-functional partners, and build research practices that outlast individual projects. I'm equally at home running a 12-week longitudinal ethnography and pressure-testing a hypothesis with rapid qualitative validation before A/B deployment. The method serves the question, not the other way around.</p>
     </div>
 
+    <div class="about-photo">
+      <img src="../assets/natasha-photo.jpg" alt="Natasha Brown" />
+    </div>
     <div class="sidebar">
       <h5>Generative &amp; Discovery</h5>
       <ul>
