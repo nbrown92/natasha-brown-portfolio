@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { PortfolioExplorer } from "@/components/portfolio";
 
 export const metadata: Metadata = {
-  title: "Portfolio | Natasha Brown, UX Research & Consumer Insights Leader",
+  title: "Case Studies | Natasha Brown, UX Research & Consumer Insights Leader",
   description:
     "Selected UX research and consumer insights work across retail e-commerce and consumer product innovation at Lowe's Digital and Procter & Gamble. How research reduced product risk, clarified priorities, and shaped roadmap, design, and business decisions.",
 };
@@ -19,7 +19,7 @@ export default function Work() {
         />
         <div className="relative max-w-6xl mx-auto px-6">
           <p className="text-gold-600 font-semibold text-sm uppercase tracking-widest mb-4">
-            Portfolio
+            Case Studies
           </p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-navy-900 max-w-4xl leading-[1.05]">
             Research that turns customer signal into product momentum
