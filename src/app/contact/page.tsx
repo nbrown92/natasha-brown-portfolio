@@ -263,6 +263,19 @@ export default function Contact() {
             <div className="md:col-span-2 space-y-8">
               <SidebarCard
                 variant="gold"
+                title="For hiring teams"
+                intro="If you're hiring for a senior or leadership research role, it helps to share:"
+                items={[
+                  "The role, level, and team",
+                  "A link to the job description",
+                  "Whether it's full-time, contract, or fractional",
+                  "Your ideal timeline",
+                ]}
+                outro="I'm best matched to senior, strategic, decision-oriented research leadership."
+              />
+
+              <SidebarCard
+                variant="bordered"
                 title="For consulting & advisory"
                 intro="I'm best suited to strategic, decision-oriented research. A strong inquiry usually includes:"
                 items={[
@@ -273,19 +286,6 @@ export default function Contact() {
                   "The outcome you're hoping for",
                 ]}
                 outro="The more context you share, the faster I can tell you whether and how I can help."
-              />
-
-              <SidebarCard
-                variant="bordered"
-                title="For hiring teams"
-                intro="If you're hiring for a senior or leadership research role, it helps to share:"
-                items={[
-                  "The role, level, and team",
-                  "A link to the job description",
-                  "Whether it's full-time, contract, or fractional",
-                  "Your ideal timeline",
-                ]}
-                outro="I'm best matched to senior, strategic, decision-oriented research leadership."
               />
 
               <div className="space-y-4">
@@ -312,7 +312,7 @@ export default function Contact() {
                   </p>
                   <p className="text-sm text-navy-600 font-light">
                     <a
-                      href="https://www.linkedin.com/in/natasha-brown016/"
+                      href="https://www.linkedin.com/in/natasha-brown-ux/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="hover:text-navy-900 transition-colors"

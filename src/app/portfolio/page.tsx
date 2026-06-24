@@ -12,7 +12,7 @@ export default function Work() {
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-white border-b border-navy-100 py-20 md:py-28 overflow-hidden">
+      <section className="relative bg-white border-b border-navy-100 py-14 md:py-20 overflow-hidden">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute -top-24 -right-24 w-96 h-96 rounded-full bg-gold-100/50 blur-3xl"
@@ -24,22 +24,17 @@ export default function Work() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-navy-900 max-w-4xl leading-[1.05]">
             Research that turns customer signal into product momentum
           </h1>
-          <p className="mt-6 text-lg font-light text-navy-500 max-w-3xl leading-relaxed">
+          <p className="mt-4 text-lg font-light text-navy-500 max-w-3xl leading-relaxed">
             Selected work showing how I&apos;ve helped teams reduce product
             risk, clarify what to build, and translate customer behavior into
             roadmap, design, and business decisions across retail e-commerce and
             consumer products.
           </p>
-          <p className="mt-4 text-base font-light text-navy-400 max-w-3xl leading-relaxed">
-            Built for teams making ambiguous, high-stakes decisions where the
-            right customer signal can change what gets prioritized, shipped, or
-            scaled.
-          </p>
         </div>
       </section>
 
       {/* Case studies explorer */}
-      <section className="bg-sand-50 py-16 md:py-24">
+      <section className="bg-sand-50 py-12 md:py-16">
         <div data-reveal className="max-w-6xl mx-auto px-6">
           <PortfolioExplorer />
           <p className="mt-10 text-sm text-navy-500 font-light max-w-3xl">

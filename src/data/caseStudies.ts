@@ -49,12 +49,22 @@ export interface CaseStudyDetail {
   confidentialityNote: string;
 }
 
+export interface CardMetric {
+  value: string;
+  label: string;
+}
+
 export interface CaseStudy {
   slug: string;
   title: string;
+  outcomeTitle: string;
+  cardRole: string;
+  primaryMetric: CardMetric;
+  secondaryMetric?: CardMetric;
   client: string;
   category: string;
   image?: string;
+  imageAlt?: string;
   bannerImage?: string;
   bannerPosition?: string;
   summary: string;
@@ -75,9 +85,14 @@ export const caseStudies: CaseStudy[] = [
     slug: "post-purchase-friction",
     title:
       "Transforming Lowe's post-purchase UX to reduce churn risk and protect revenue",
+    outcomeTitle: "Cutting churn risk in Lowe's post-purchase UX",
+    cardRole: "Sr. UX Researcher, Co-Lead",
+    primaryMetric: { value: "$14M", label: "saved sales revenue" },
+    secondaryMetric: { value: "-12%", label: "avoidable service calls" },
     client: "Lowe's Digital",
     category: "Retail E-commerce / Post-Purchase",
     image: "/covers/pp-cover.jpg",
+    imageAlt: "Lowe's order management experience on mobile",
     bannerImage: "/covers/pp-banner.jpg",
     bannerPosition: "center 58%",
     summary:
@@ -222,9 +237,14 @@ export const caseStudies: CaseStudy[] = [
     slug: "blinds-category-experience",
     title:
       "Leading UX strategy to elevate the Blinds & Shades category experience",
+    outcomeTitle: "Lifting conversion in Lowe's Blinds & Shades experience",
+    cardRole: "Sr. UX Researcher",
+    primaryMetric: { value: "+5%", label: "add-to-cart rate" },
+    secondaryMetric: { value: "+18 bps", label: "likelihood to recommend" },
     client: "Lowe's Digital",
     category: "Retail E-commerce / Category Experience",
     image: "/covers/lowes-blinds-cover.jpg",
+    imageAlt: "Lowe's Blinds and Shades category page",
     bannerImage: "/covers/lowes-blinds-banner.jpg",
     summary:
       "Led foundational, agile research to elevate Lowe's Blinds & Shades category experience: mapping the buying journey, prioritizing opportunities with survey data, and iterating on list and configurator designs. The work shaped the Q3 roadmap and influenced CX investment across the business.",
@@ -307,9 +327,13 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "disposable-razor-innovation",
     title: "Reimagining the disposable razor to compete with a category leader",
+    outcomeTitle: "De-risking tooling for a Venus disposable razor redesign",
+    cardRole: "User & Products Researcher",
+    primaryMetric: { value: "De-risked", label: "tooling before investment" },
     client: "Procter & Gamble",
     category: "Consumer Products / Innovation",
     image: "/covers/dispo-card.jpg",
+    imageAlt: "Venus disposable razor handle prototypes",
     bannerImage: "/covers/dispo-banner.jpg",
     bannerPosition: "center top",
     summary:
@@ -392,9 +416,14 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "venus-premium-benefit",
     title: "Testing whether a premium razor benefit could survive real use",
+    outcomeTitle: "Protecting a $150K program from an unproven premium claim",
+    cardRole: "User & Products Researcher",
+    primaryMetric: { value: "$150K", label: "program protected" },
+    secondaryMetric: { value: "1.5 yrs", label: "of research led" },
     client: "Procter & Gamble",
     category: "Consumer Products / Innovation",
     image: "/covers/venus-exfoliating-razor-mock.jpg",
+    imageAlt: "Venus premium exfoliating razor concept",
     bannerImage: "/covers/premium-razor-banner.jpg",
     bannerPosition: "center top",
     summary:
@@ -405,7 +434,7 @@ export const caseStudies: CaseStudy[] = [
       "I aligned scope and the research plan, then ran a multi-method program: metaphorical elicitation and virtual interviews to uncover unmet needs, in-depth interviews and surveys on holistic-proposition prototypes, and a 9-week at-home split-body diary study to test real performance against expectations.",
     methods: [
       "Metaphorical Elicitation",
-      "In-Depth Interviews",
+      "Concept Testing",
       "Diary Study",
       "Survey",
     ],

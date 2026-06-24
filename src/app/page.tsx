@@ -100,13 +100,19 @@ export default function Home() {
               UX Research • Consumer Insights • Product Strategy
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.05] tracking-tight text-navy-900">
-              Research that helps teams reduce risk, move faster, and build with
-              confidence
+              Research that turns customer behavior into product strategy.
             </h1>
             <p className="mt-5 text-lg font-light text-navy-500 leading-relaxed">
-              Senior UX research and consumer insights leader with 10 years
-              of experience helping teams reduce risk, move faster, and make
-              product decisions with confidence.
+              I&apos;m a senior UX research and consumer insights leader who
+              has de-risked product bets across physical products, software,
+              and digital commerce. I turn messy customer signals into clear
+              decisions that help teams move faster, build with confidence,
+              and influence business outcomes.
+            </p>
+            <p className="mt-4 text-base font-light text-navy-400 leading-relaxed">
+              Open to senior through director-level opportunities across UX
+              Research, Consumer Insights, and insight-led Product Strategy
+              roles.
             </p>
             <div className="mt-7 flex flex-wrap gap-4">
               <Link

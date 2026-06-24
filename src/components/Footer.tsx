@@ -47,7 +47,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <a
-                  href="https://www.linkedin.com/in/natasha-brown016/"
+                  href="https://www.linkedin.com/in/natasha-brown-ux/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-navy-900 transition-colors"
