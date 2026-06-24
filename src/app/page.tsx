@@ -105,9 +105,8 @@ export default function Home() {
             </h1>
             <p className="mt-5 text-lg font-light text-navy-500 leading-relaxed">
               Senior UX research and consumer insights leader with 10 years
-              across Lowe&apos;s Digital and Procter &amp; Gamble, turning
-              customer behavior into clearer priorities and stronger product
-              decisions.
+              of experience helping teams reduce risk, move faster, and make
+              product decisions with confidence.
             </p>
             <div className="mt-7 flex flex-wrap gap-4">
               <Link
@@ -155,23 +154,15 @@ export default function Home() {
 
       {/* Formerly logos */}
       <section className="bg-navy-50 border-b border-navy-100">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-navy-400 font-light">
-          <span>Formerly at</span>
-          {/* TODO: Replace placeholders with grayscale logo images.
-              Needed files:
-              - /public/logos/lowes-logo-gray.svg  (or .png)
-              - /public/logos/pg-logo-gray.svg     (or .png)
-              Recommended: ~120px wide, grayscale, transparent background */}
-          <span className="inline-flex items-center gap-1 font-medium text-navy-500">
-            {/* <Image src="/logos/lowes-logo-gray.svg" alt="Lowe's" width={80} height={24} /> */}
-            Lowe&apos;s Digital
-          </span>
-          <span className="inline-flex items-center gap-1 font-medium text-navy-500">
-            {/* <Image src="/logos/pg-logo-gray.svg" alt="Procter & Gamble" width={80} height={24} /> */}
-            Procter &amp; Gamble
-          </span>
-          <span className="text-navy-300">·</span>
-          <span>Retail e-commerce, mobile experiences, CPG innovation, and research strategy</span>
+        <div className="max-w-6xl mx-auto px-6 py-5 flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
+          <span className="text-sm text-navy-400 font-light">Experience across</span>
+          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 grayscale opacity-60">
+            <Image src="/logos/lowes_logo.svg" alt="Lowe's" width={80} height={28} />
+            <Image src="/logos/pg_logo.svg" alt="Procter & Gamble" width={60} height={28} />
+            <Image src="/logos/Venus_logo.svg" alt="Venus" width={70} height={28} />
+            <Image src="/logos/bounce_logo.svg" alt="Bounce" width={70} height={28} />
+            <Image src="/logos/downy_logo.svg" alt="Downy" width={70} height={28} />
+          </div>
         </div>
       </section>
 
