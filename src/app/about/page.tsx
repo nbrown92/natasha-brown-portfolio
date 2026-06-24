@@ -9,19 +9,11 @@ export const metadata: Metadata = {
 };
 
 const coreCapabilities = [
-  "Mixed-methods research",
-  "Discovery and generative research",
-  "Evaluative usability testing",
-  "Survey design and analysis",
-  "Behavioral and quantitative analysis",
-  "Information architecture",
-  "A/B testing partnership",
-  "Executive storytelling",
-  "Research roadmapping",
-  "Research operations and enablement",
-  "AI-assisted synthesis",
-  "Cross-functional facilitation",
-  "Mentorship and team coaching",
+  "Mixed-methods research design and discovery",
+  "Evaluative testing, survey design, and behavioral analysis",
+  "Information architecture and A/B testing partnership",
+  "Executive storytelling and cross-functional facilitation",
+  "Research operations, AI-assisted synthesis, and team enablement",
 ];
 
 const qualitativeMethods = [
@@ -58,24 +50,6 @@ const platforms = [
   "respondent.io",
 ];
 
-const leadershipEdge = [
-  {
-    title: "I operate well in ambiguity",
-    body: "I am at my best in under-defined problem spaces, where the question itself is not clear yet. I bring structure to the fog and a credible path to a decision.",
-  },
-  {
-    title: "I translate messy signals into clear direction",
-    body: "Interviews, behavior, surveys, analytics, support data, competitive context. I triangulate conflicting inputs into one defensible point of view leaders can act on.",
-  },
-  {
-    title: "I bridge consumer insight, digital product, and business strategy",
-    body: "Physical products at P&G, digital experiences at Lowe's. I connect what customers need to what the business must prioritize, in language product and leadership both understand.",
-  },
-  {
-    title: "I help teams make better decisions, not just gather more data",
-    body: "Research only matters if it changes what a team does. I design every engagement around the decision it needs to inform.",
-  },
-];
 
 const approach = [
   {
@@ -98,47 +72,7 @@ const approach = [
   },
 ];
 
-const scaleResearch = [
-  {
-    title: "Build reusable research standards",
-    body: "I create templates, planning rituals, and synthesis structures that help teams ask sharper questions, align earlier, and make insights easier to reuse.",
-  },
-  {
-    title: "Enable teams to use insight better",
-    body: "I've mentored researchers, coached cross-functional partners, and helped teams move from one-off findings to shared decision frameworks.",
-  },
-  {
-    title: "Turn scattered signals into roadmap direction",
-    body: "I connect interviews, surveys, analytics, support data, and customer feedback into clear priorities that product, design, and business leaders can act on.",
-  },
-  {
-    title: "Raise the quality of product decisions",
-    body: "I help teams clarify what needs to be learned, what risk needs to be reduced, and what evidence is strong enough to support a product bet.",
-  },
-];
 
-function PillRow({
-  items,
-  variant = "method",
-}: {
-  items: string[];
-  variant?: "core" | "method" | "platform";
-}) {
-  const styles = {
-    core: "bg-white border border-navy-300 text-navy-900 font-semibold px-4 py-2 text-sm shadow-sm",
-    method: "bg-white border border-navy-200 text-navy-700 font-medium px-3.5 py-1.5 text-sm",
-    platform: "bg-navy-100/60 text-navy-500 font-medium px-3 py-1 text-xs",
-  };
-  return (
-    <div className="flex flex-wrap gap-2.5">
-      {items.map((item) => (
-        <span key={item} className={`rounded-full ${styles[variant]}`}>
-          {item}
-        </span>
-      ))}
-    </div>
-  );
-}
 
 // Curved-down divider: the top section's color sweeps down into the section below.
 function Curve({ top, bottom }: { top: string; bottom: string }) {
@@ -234,34 +168,6 @@ export default function About() {
         </div>
       </section>
 
-      <Curve top={C.white} bottom={C.navy50} />
-
-      {/* Leadership edge */}
-      <section className="bg-navy-50 py-14 md:py-[4.5rem]">
-        <div data-reveal className="max-w-6xl mx-auto px-6">
-          <p className="text-gold-600 font-semibold text-sm uppercase tracking-widest mb-3">
-            What sets my work apart
-          </p>
-          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-navy-900 mb-12">
-            A research leader, not just a researcher
-          </h2>
-          <div className="grid sm:grid-cols-2 gap-px bg-navy-100 border border-navy-100 rounded-2xl overflow-hidden">
-            {[...leadershipEdge, ...scaleResearch].map((item) => (
-              <div key={item.title} className="bg-navy-50 p-8">
-                <h3 className="text-xl font-bold text-navy-900 mb-3">
-                  {item.title}
-                </h3>
-                <p className="text-navy-600 font-light leading-relaxed">
-                  {item.body}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <Curve top={C.navy50} bottom={C.white} />
-
       {/* Approach */}
       <section className="py-14 md:py-[4.5rem]">
         <div data-reveal className="max-w-6xl mx-auto px-6">
@@ -295,7 +201,7 @@ export default function About() {
       <section className="bg-sand-50 py-14 md:py-[4.5rem]">
         <div data-reveal className="max-w-6xl mx-auto px-6">
           <p className="text-gold-600 font-semibold text-sm uppercase tracking-widest mb-3">
-            Capabilities & toolkit
+            Capabilities &amp; Toolkit
           </p>
           <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-navy-900">
             Methods in service of decisions
@@ -306,14 +212,31 @@ export default function About() {
             right time.
           </p>
 
-          <div className="mt-12 space-y-10">
+          <div className="mt-12 space-y-12">
+            {/* Core capabilities — numbered ruled list */}
             <div>
               <h3 className="text-sm font-semibold text-navy-900 uppercase tracking-wider mb-4">
                 Core capabilities
               </h3>
-              <PillRow items={coreCapabilities} variant="core" />
+              <ol className="list-none m-0 p-0" style={{ borderTop: "2px solid #E1DED5" }}>
+                {coreCapabilities.map((cap, i) => (
+                  <li
+                    key={cap}
+                    className="flex items-baseline gap-4 py-3"
+                    style={{ borderBottom: "1px solid #E1DED5" }}
+                  >
+                    <span className="text-gold-600 font-semibold text-sm tracking-widest tabular-nums shrink-0" style={{ fontVariantNumeric: "tabular-nums" }}>
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="text-navy-900 font-semibold text-lg">
+                      {cap}
+                    </span>
+                  </li>
+                ))}
+              </ol>
             </div>
 
+            {/* Qualitative & Quantitative — two columns, middot runs */}
             <div className="grid md:grid-cols-2 gap-10">
               <div>
                 <h3 className="text-sm font-semibold text-navy-900 uppercase tracking-wider mb-1">
@@ -322,7 +245,9 @@ export default function About() {
                 <p className="text-sm text-navy-500 font-light mb-4">
                   To uncover root problems, needs, and motivations
                 </p>
-                <PillRow items={qualitativeMethods} />
+                <p className="text-[15px] text-navy-700 font-light" style={{ lineHeight: 2 }}>
+                  {qualitativeMethods.join(" · ")}
+                </p>
               </div>
               <div>
                 <h3 className="text-sm font-semibold text-navy-900 uppercase tracking-wider mb-1">
@@ -331,15 +256,20 @@ export default function About() {
                 <p className="text-sm text-navy-500 font-light mb-4">
                   To validate, measure behavior, and quantify opportunity
                 </p>
-                <PillRow items={quantitativeMethods} />
+                <p className="text-[15px] text-navy-700 font-light" style={{ lineHeight: 2 }}>
+                  {quantitativeMethods.join(" · ")}
+                </p>
               </div>
             </div>
 
-            <div>
-              <h3 className="text-sm font-semibold text-navy-900 uppercase tracking-wider mb-4">
+            {/* Platforms — muted middot run */}
+            <div style={{ borderTop: "1px solid #E1DED5" }} className="pt-6">
+              <h3 className="text-sm font-semibold text-navy-900 uppercase tracking-wider mb-3">
                 Platforms
               </h3>
-              <PillRow items={platforms} variant="platform" />
+              <p className="text-sm text-navy-500 font-light">
+                {platforms.join(" · ")}
+              </p>
             </div>
           </div>
         </div>

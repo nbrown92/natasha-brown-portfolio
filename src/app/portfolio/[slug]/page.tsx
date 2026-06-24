@@ -67,6 +67,53 @@ export default async function CaseStudyPage({
         </div>
       </section>
 
+      {/* TL;DR summary */}
+      {study.tldr && (
+        <section className="bg-sand-50 border-b border-navy-100">
+          <div className="max-w-4xl mx-auto px-6 py-10 md:py-12">
+            <div className="border-l-[3px] border-gold-400 pl-6 space-y-3">
+              <p className="text-gold-600 font-semibold text-sm uppercase tracking-widest mb-1">
+                TL;DR
+              </p>
+              <p className="text-sm font-semibold text-navy-500 tracking-wide">
+                {study.tldr.roleLine}
+              </p>
+              <p className="text-navy-700 font-light leading-relaxed text-[17px]">
+                {study.tldr.decision}
+              </p>
+              <p className="text-navy-900 font-semibold leading-relaxed text-[17px]">
+                {study.tldr.result}
+              </p>
+              {(study.primaryMetric || study.secondaryMetric) && (
+                <div className="flex items-baseline gap-6 pt-1">
+                  <div>
+                    <span className="text-2xl font-extrabold tracking-tight text-gold-600">
+                      {study.primaryMetric.value}
+                    </span>
+                    <span className="ml-2 text-sm text-navy-500 font-medium">
+                      {study.primaryMetric.label}
+                    </span>
+                  </div>
+                  {study.secondaryMetric && (
+                    <>
+                      <div className="w-px h-5 bg-navy-200" />
+                      <div>
+                        <span className="text-2xl font-extrabold tracking-tight text-gold-600">
+                          {study.secondaryMetric.value}
+                        </span>
+                        <span className="ml-2 text-sm text-navy-500 font-medium">
+                          {study.secondaryMetric.label}
+                        </span>
+                      </div>
+                    </>
+                  )}
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
+      )}
+
       {study.slug === "post-purchase-friction" ? (
         <PostPurchaseCaseStudy study={study} />
       ) : study.slug === "blinds-category-experience" ? (

@@ -54,6 +54,12 @@ export interface CardMetric {
   label: string;
 }
 
+export interface CaseStudyTldr {
+  roleLine: string;
+  decision: string;
+  result: string;
+}
+
 export interface CaseStudy {
   slug: string;
   title: string;
@@ -61,6 +67,7 @@ export interface CaseStudy {
   cardRole: string;
   primaryMetric: CardMetric;
   secondaryMetric?: CardMetric;
+  tldr?: CaseStudyTldr;
   client: string;
   category: string;
   image?: string;
@@ -89,6 +96,11 @@ export const caseStudies: CaseStudy[] = [
     cardRole: "Sr. UX Researcher, Co-Lead",
     primaryMetric: { value: "$14M", label: "saved sales revenue" },
     secondaryMetric: { value: "-12%", label: "avoidable service calls" },
+    tldr: {
+      roleLine: "Sr. UX Researcher, Co-Lead · Lowe's Digital",
+      decision: "Post-purchase friction was driving churn risk and avoidable service cost; the question was whether order management should be reframed as a retention strategy.",
+      result: "Reframing it as retention protected ~$14M in sales revenue and cut avoidable service calls 12%.",
+    },
     client: "Lowe's Digital",
     category: "Retail E-commerce / Post-Purchase",
     image: "/covers/pp-cover.jpg",
@@ -241,6 +253,11 @@ export const caseStudies: CaseStudy[] = [
     cardRole: "Sr. UX Researcher",
     primaryMetric: { value: "+5%", label: "add-to-cart rate" },
     secondaryMetric: { value: "+18 bps", label: "likelihood to recommend" },
+    tldr: {
+      roleLine: "Sr. UX Researcher · Lowe's Digital",
+      decision: "The Blinds & Shades category was underperforming on conversion and confidence; the question was which experience gaps to prioritize on the Q3 roadmap.",
+      result: "Prioritizing the right gaps lifted add-to-cart rate 5% and likelihood to recommend 18 bps.",
+    },
     client: "Lowe's Digital",
     category: "Retail E-commerce / Category Experience",
     image: "/covers/lowes-blinds-cover.jpg",
@@ -330,6 +347,11 @@ export const caseStudies: CaseStudy[] = [
     outcomeTitle: "De-risking tooling for a Venus disposable razor redesign",
     cardRole: "User & Products Researcher",
     primaryMetric: { value: "De-risked", label: "tooling before investment" },
+    tldr: {
+      roleLine: "User & Products Researcher · Procter & Gamble",
+      decision: "Venus needed to beat Bic Soleil for the first time; the question was whether changing only the handle design could shift purchase intent without retooling the blades.",
+      result: "Consumer-driven handle direction de-risked tooling investment and built a pipeline for competitive advantage.",
+    },
     client: "Procter & Gamble",
     category: "Consumer Products / Innovation",
     image: "/covers/dispo-card.jpg",
@@ -420,6 +442,11 @@ export const caseStudies: CaseStudy[] = [
     cardRole: "User & Products Researcher",
     primaryMetric: { value: "$150K", label: "program protected" },
     secondaryMetric: { value: "1.5 yrs", label: "of research led" },
+    tldr: {
+      roleLine: "User & Products Researcher · Procter & Gamble",
+      decision: "Venus wanted to justify a $25-$30 premium price tier on a new exfoliation benefit; the question was whether the benefit could survive real-world use.",
+      result: "The benefit failed the performance test, and the recommendation to stop protected a $150K program from investing behind an unproven claim.",
+    },
     client: "Procter & Gamble",
     category: "Consumer Products / Innovation",
     image: "/covers/venus-exfoliating-razor-mock.jpg",
