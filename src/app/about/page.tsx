@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About | Natasha Brown, UX Research & Consumer Insights Leader",
   description:
-    "Natasha Brown is a senior UX research and consumer insights leader with 9+ years across Lowe's Digital and Procter & Gamble. From a Chemical Engineering foundation to consumer product innovation and digital UX research leadership, she turns messy customer signals into clear product direction and business impact.",
+    "Natasha Brown is a senior UX research and consumer insights leader with 10 years across Lowe's Digital and Procter & Gamble. From a Chemical Engineering foundation to consumer product innovation and digital UX research leadership, she turns messy customer signals into clear product direction and business impact.",
 };
 
 const coreCapabilities = [
@@ -201,7 +201,7 @@ export default function About() {
         <div data-reveal className="max-w-3xl mx-auto px-6 space-y-6 text-navy-700">
           <p className="text-xl font-light leading-relaxed">
             I&apos;m Natasha Brown, a senior UX research and consumer insights
-            leader with 9+ years turning customer behavior into product
+            leader with 10 years turning customer behavior into product
             direction and business impact, across retail e-commerce, mobile and
             digital experiences, and global consumer products.
           </p>
@@ -373,8 +373,6 @@ export default function About() {
               I care about building research cultures that are both rigorous and
               human, mentoring the next generation of researchers, and doing
               work that respects the customer and the business in equal measure.
-              I take on a limited number of consulting engagements at a time so
-              the teams I partner with get my full attention.
             </p>
           </div>
         </div>

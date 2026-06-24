@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 const credibility = [
-  { stat: "9+ yrs", label: "UX research + consumer insights" },
+  { stat: "10 yrs", label: "UX research + consumer insights" },
   { stat: "$50M+", label: "innovation portfolio influenced" },
   { stat: "300+", label: "associates enabled" },
   { stat: "Startup to enterprise", label: "scale research" },
@@ -10,7 +10,7 @@ const credibility = [
 
 const highlights = [
   {
-    metric: "9+ Years",
+    metric: "10 Years",
     label: "Research leadership",
     copy: "Across retail e-commerce, mobile experiences, home improvement, grooming, fabric care, and global consumer products.",
   },
@@ -104,31 +104,25 @@ export default function Home() {
               confidence
             </h1>
             <p className="mt-5 text-lg font-light text-navy-500 leading-relaxed">
-              I&apos;m Natasha Brown, a senior UX research and consumer insights
-              leader with 9+ years across Lowe&apos;s Digital and Procter &amp;
-              Gamble. I help teams turn customer behavior into clearer
-              priorities, stronger product decisions, and measurable business
-              impact.
+              Senior UX research and consumer insights leader with 10 years
+              across Lowe&apos;s Digital and Procter &amp; Gamble, turning
+              customer behavior into clearer priorities and stronger product
+              decisions.
             </p>
             <div className="mt-7 flex flex-wrap gap-4">
               <Link
                 href="/portfolio"
                 className="bg-navy-900 text-white font-semibold px-6 py-3 rounded-lg hover:bg-navy-700 transition-colors"
               >
-                View Case Studies
+                View case studies
               </Link>
               <Link
-                href="/contact"
+                href="/about"
                 className="border border-navy-300 text-navy-700 font-semibold px-6 py-3 rounded-lg hover:bg-navy-50 transition-colors"
               >
-                Work With Me
+                About me
               </Link>
             </div>
-            <p className="mt-6 text-sm text-navy-500 font-light leading-relaxed">
-              Formerly Lowe&apos;s Digital + Procter &amp; Gamble • Retail
-              e-commerce, mobile experiences, CPG innovation, and research
-              strategy
-            </p>
           </div>
           <div className="relative w-full min-h-[420px] md:min-h-0 rounded-2xl overflow-hidden bg-gold-100">
             <Image
@@ -159,63 +153,27 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Built for two kinds of conversations */}
-      <section className="bg-sand-50 py-14 md:py-[4.5rem]">
-        <div data-reveal className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-navy-900">
-            Two ways to work with me
-          </h2>
-          <p className="mt-4 text-lg font-light text-navy-500 max-w-3xl leading-relaxed">
-            Whether you&apos;re evaluating me for a senior research role or need
-            an experienced research partner for a specific decision, here is
-            where to start.
-          </p>
-          <div className="mt-12 grid md:grid-cols-2 gap-8">
-            <Link
-              href="/portfolio"
-              className="group bg-white border border-navy-100 rounded-2xl p-8 flex flex-col transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:shadow-navy-900/5 hover:border-navy-200"
-            >
-              <h3 className="text-xl font-bold text-navy-900 mb-3">
-                For hiring teams
-              </h3>
-              <p className="text-navy-500 font-light leading-relaxed flex-1">
-                Evaluating me for a Lead, Staff, Principal, Senior Manager, or
-                Director-level role? See how I set research direction, influence
-                product strategy, and turn customer insight into business impact
-                across Lowe&apos;s Digital and Procter &amp; Gamble.
-              </p>
-              <span className="mt-6 inline-flex items-center font-semibold text-gold-600">
-                See case studies &amp; impact
-                <span className="ml-1 inline-block transition-transform group-hover:translate-x-1">
-                  &rarr;
-                </span>
-              </span>
-            </Link>
-            <Link
-              href="/services"
-              className="group bg-white border border-navy-100 rounded-2xl p-8 flex flex-col transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:shadow-navy-900/5 hover:border-navy-200"
-            >
-              <h3 className="text-xl font-bold text-navy-900 mb-3">
-                For product &amp; business teams
-              </h3>
-              <p className="text-navy-500 font-light leading-relaxed flex-1">
-                Need senior research firepower without a full-time hire? Bring me
-                in to de-risk a specific decision through discovery, usability
-                testing, research strategy, or executive-ready synthesis, scoped
-                to your timeline.
-              </p>
-              <span className="mt-6 inline-flex items-center font-semibold text-gold-600">
-                Explore consulting
-                <span className="ml-1 inline-block transition-transform group-hover:translate-x-1">
-                  &rarr;
-                </span>
-              </span>
-            </Link>
-          </div>
+      {/* Formerly logos */}
+      <section className="bg-navy-50 border-b border-navy-100">
+        <div className="max-w-6xl mx-auto px-6 py-4 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-navy-400 font-light">
+          <span>Formerly at</span>
+          {/* TODO: Replace placeholders with grayscale logo images.
+              Needed files:
+              - /public/logos/lowes-logo-gray.svg  (or .png)
+              - /public/logos/pg-logo-gray.svg     (or .png)
+              Recommended: ~120px wide, grayscale, transparent background */}
+          <span className="inline-flex items-center gap-1 font-medium text-navy-500">
+            {/* <Image src="/logos/lowes-logo-gray.svg" alt="Lowe's" width={80} height={24} /> */}
+            Lowe&apos;s Digital
+          </span>
+          <span className="inline-flex items-center gap-1 font-medium text-navy-500">
+            {/* <Image src="/logos/pg-logo-gray.svg" alt="Procter & Gamble" width={80} height={24} /> */}
+            Procter &amp; Gamble
+          </span>
+          <span className="text-navy-300">·</span>
+          <span>Retail e-commerce, mobile experiences, CPG innovation, and research strategy</span>
         </div>
       </section>
-
-      <Curve top={C.sand50} bottom={C.white} />
 
       {/* How I operate at senior levels */}
       <section className="bg-white py-14 md:py-[4.5rem]">

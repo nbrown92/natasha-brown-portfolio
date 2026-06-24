@@ -15,7 +15,7 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   title: "Natasha Brown | UX Research & Consumer Insights Leader",
   description:
-    "Portfolio and consulting site for Natasha Brown, a senior UX research and consumer insights leader with 9+ years across Lowe's Digital and Procter & Gamble. Specializing in mixed-methods research, product strategy, discovery, usability testing, customer journey research, and research strategy.",
+    "Portfolio site for Natasha Brown, a senior UX research and consumer insights leader with 10 years across Lowe's Digital and Procter & Gamble. Specializing in mixed-methods research, product strategy, discovery, usability testing, customer journey research, and research strategy.",
 };
 
 export default function RootLayout({

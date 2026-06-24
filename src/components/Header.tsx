@@ -6,7 +6,6 @@ import { useState } from "react";
 const navItems = [
   { label: "Home", href: "/" },
   { label: "Case Studies", href: "/portfolio" },
-  { label: "Services", href: "/services" },
   { label: "About", href: "/about" },
 ];
 
@@ -37,7 +36,7 @@ export function Header() {
             href="/contact"
             className="text-sm font-semibold bg-navy-900 text-white px-5 py-2.5 rounded-lg hover:bg-navy-700 transition-colors"
           >
-            Work With Me
+            Contact
           </Link>
         </nav>
 
@@ -88,7 +87,7 @@ export function Header() {
             className="block text-sm font-semibold bg-navy-900 text-white px-5 py-2.5 rounded-lg text-center hover:bg-navy-700 transition-colors"
             onClick={() => setMobileOpen(false)}
           >
-            Work With Me
+            Contact
           </Link>
         </nav>
       )}

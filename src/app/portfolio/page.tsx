@@ -67,13 +67,7 @@ export default function Work() {
               href="/contact"
               className="bg-navy-900 text-white font-semibold px-8 py-3 rounded-lg hover:bg-navy-700 transition-colors"
             >
-              Work With Me
-            </Link>
-            <Link
-              href="/services"
-              className="border border-navy-300 text-navy-700 font-semibold px-8 py-3 rounded-lg hover:bg-white transition-colors"
-            >
-              View Services
+              Contact
             </Link>
           </div>
         </div>

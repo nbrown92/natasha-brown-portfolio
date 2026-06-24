@@ -209,7 +209,7 @@ export const faqs: Faq[] = [
 ];
 
 export const credibilityPoints: string[] = [
-  "9+ years leading research across enterprise retail e-commerce and global consumer products at Lowe's Digital and Procter & Gamble.",
+  "10 years leading research across enterprise retail e-commerce and global consumer products at Lowe's Digital and Procter & Gamble.",
   "Senior judgment on which research is worth doing, so you spend on the decisions that matter, not busywork.",
   "Decision-focused outputs, not 80-page decks that gather dust. You get a clear point of view your team can act on.",
   "Mixed-methods depth, from discovery and usability to surveys, behavioral analysis, and AI-assisted synthesis.",
